@@ -1,4 +1,4 @@
-# Mobile Lift Design Contract
+# Apex Auto Detailing Design Contract
 
 ## Source Baseline
 
@@ -42,7 +42,7 @@
 
 ## LPF Adaptation Notes
 
-- WLFS generated the header/footer logo and favicon bundle for `Mobile Lift`.
+- WLFS generated the header/footer logo and favicon bundle for `Apex Auto Detailing`.
 - Final photographic slots use local Unsplash API downloads recorded in `docs/ASSET-SOURCES.md`.
 - Source reveal behavior is implemented as visible-by-default CSS transitions and hover states so content never renders blank without JavaScript.
 - Source FAQ tab content is adapted to accessible native `details` panels.

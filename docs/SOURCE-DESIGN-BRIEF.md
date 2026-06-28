@@ -3,7 +3,7 @@
 ## Source Facts
 
 - Source: AxeMobile by Widagdos via Envato Elements.
-- Business category: mobile car detailing / auto care / home services.
+- Business category: mobile car detailing / auto care / car-wash-detailing.
 - Visual grammar: black automotive backdrop, acid-yellow accent, rounded pill CTAs, dark service cards, yellow vehicle hero/service imagery, compact testimonial cards, three pricing cards, FAQ list, and blog thumbnails.
 - Typography: source CSS records `h1` at 72/64/56/48px across breakpoints, `h2` at 48/40/36/32px, and body/link text at 18/16px with Public Sans and Libre Franklin.
 - Section order: header, hero, feature cards, about, services, why choose, process, reviews, pricing, CTA, FAQ, blog, footer.

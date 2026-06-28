@@ -1,5 +1,5 @@
 {
-  "slug": "mobile-lift",
+  "slug": "apex-auto-detailing",
   "sourceUrl": "https://axemobile.widagdos.net/?storefront=envato-elements",
   "sourceFacts": {
     "sectionOrder": [
@@ -37,15 +37,15 @@
   "requiredFiles": [
     "docs/SOURCE-DESIGN-BRIEF.md",
     "docs/ASSET-SOURCES.md",
-    "public/images/mobile-lift/manifest.json",
-    "public/images/mobile-lift/hero-interior.jpg",
-    "public/images/mobile-lift/yellow-car.jpg",
-    "public/images/mobile-lift/headlight.jpg",
-    "public/assets/img/logo/mobile-lift/logo.png",
-    "public/assets/img/logo/mobile-lift/logo_white.png",
-    "public/assets/img/logo/mobile-lift/favicon.png",
-    "public/assets/img/logo/mobile-lift/favicon-32x32.png",
-    "public/assets/img/logo/mobile-lift/favicon-16x16.png"
+    "public/images/apex-auto-detailing/manifest.json",
+    "public/images/apex-auto-detailing/hero-interior.jpg",
+    "public/images/apex-auto-detailing/yellow-car.jpg",
+    "public/images/apex-auto-detailing/headlight.jpg",
+    "public/assets/img/logo/apex-auto-detailing/logo.png",
+    "public/assets/img/logo/apex-auto-detailing/logo_white.png",
+    "public/assets/img/logo/apex-auto-detailing/favicon.png",
+    "public/assets/img/logo/apex-auto-detailing/favicon-32x32.png",
+    "public/assets/img/logo/apex-auto-detailing/favicon-16x16.png"
   ],
   "forbiddenSourceRefs": [
     "images/Main-Logo.png",
@@ -58,9 +58,9 @@
     {
       "label": "Hero dashboard background",
       "sourceRef": "images/car-dashboard-modern-luxury-interior-steering-wh-2025-01-10-13-41-08-utc.jpg",
-      "finalFile": "public/images/mobile-lift/hero-interior.jpg",
-      "requiredFiles": ["public/images/mobile-lift/hero-interior.jpg"],
-      "requiredRefs": ["/images/mobile-lift/hero-interior.jpg"],
+      "finalFile": "public/images/apex-auto-detailing/hero-interior.jpg",
+      "requiredFiles": ["public/images/apex-auto-detailing/hero-interior.jpg"],
+      "requiredRefs": ["/images/apex-auto-detailing/hero-interior.jpg"],
       "sourceRole": "static photography background",
       "provider": "Unsplash API",
       "source format": "jpg",
@@ -73,9 +73,9 @@
     {
       "label": "Process vehicle detail",
       "sourceRef": "images/car-grille-and-headlight-2025-01-08-23-47-13-utc.jpg",
-      "finalFile": "public/images/mobile-lift/headlight.jpg",
-      "requiredFiles": ["public/images/mobile-lift/headlight.jpg"],
-      "requiredRefs": ["/images/mobile-lift/headlight.jpg"],
+      "finalFile": "public/images/apex-auto-detailing/headlight.jpg",
+      "requiredFiles": ["public/images/apex-auto-detailing/headlight.jpg"],
+      "requiredRefs": ["/images/apex-auto-detailing/headlight.jpg"],
       "sourceRole": "static photography",
       "provider": "Unsplash API",
       "source format": "jpg",
@@ -88,9 +88,9 @@
     {
       "label": "CTA plastic-care background",
       "sourceRef": "images/car-detailing-plastic-care-2024-12-13-06-56-27-utc.jpg",
-      "finalFile": "public/images/mobile-lift/hero-interior.jpg",
-      "requiredFiles": ["public/images/mobile-lift/hero-interior.jpg"],
-      "requiredRefs": ["/images/mobile-lift/hero-interior.jpg"],
+      "finalFile": "public/images/apex-auto-detailing/hero-interior.jpg",
+      "requiredFiles": ["public/images/apex-auto-detailing/hero-interior.jpg"],
+      "requiredRefs": ["/images/apex-auto-detailing/hero-interior.jpg"],
       "sourceRole": "static photography background",
       "provider": "Unsplash API",
       "source format": "jpg",
@@ -103,12 +103,12 @@
   ],
   "imageChecks": [
     {
-      "path": "public/images/mobile-lift/yellow-car.jpg",
+      "path": "public/images/apex-auto-detailing/yellow-car.jpg",
       "minWidth": 800,
       "minHeight": 400
     },
     {
-      "path": "public/images/mobile-lift/hero-interior.jpg",
+      "path": "public/images/apex-auto-detailing/hero-interior.jpg",
       "minWidth": 1200,
       "minHeight": 700
     }
