@@ -85,13 +85,33 @@ const posts = [
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
       <nav id="primary-nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQs</a>
-        <a href="#contact">Contact</a>
+        <a class="nav-link active" href="#top">Homepage</a>
+        <a class="nav-link" href="#about">About Us</a>
+        <div class="nav-dropdown">
+          <button class="nav-link nav-toggle-btn" type="button" aria-expanded="false" aria-controls="menu-services">
+            Services <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown-menu" id="menu-services" role="menu">
+            <a href="#services" role="menuitem">Exterior Detailing</a>
+            <a href="#services" role="menuitem">Interior Detailing</a>
+            <a href="#services" role="menuitem">Paint Correction</a>
+            <a href="#services" role="menuitem">Ceramic Coating</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-link nav-toggle-btn" type="button" aria-expanded="false" aria-controls="menu-pages">
+            Pages <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown-menu" id="menu-pages" role="menu">
+            <a href="#pricing" role="menuitem">Pricing</a>
+            <a href="#reviews" role="menuitem">Reviews</a>
+            <a href="#faq" role="menuitem">FAQs</a>
+            <a href="#blog" role="menuitem">Blog</a>
+          </div>
+        </div>
+        <a class="nav-link" href="#contact">Contact Us</a>
       </nav>
-      <a class="pill-button small" href="#booking">Make Appointment</a>
+      <a class="outline-pill" href="#booking">Make Appointment</a>
     </header>
 
     <main>
@@ -216,7 +236,7 @@ const posts = [
         </figure>
       </section>
 
-      <section class="reviews section-shell">
+      <section class="reviews section-shell" id="reviews">
         <video
           class="reviews-video"
           autoplay
@@ -310,7 +330,7 @@ const posts = [
         </div>
       </section>
 
-      <section class="blog section-shell">
+      <section class="blog section-shell" id="blog">
         <div class="section-heading center wow animate__animated animate__fadeInUp">
           <p class="eyebrow">Blogs & Articles</p>
           <h2>Expert tips and insights for car enthusiasts</h2>
@@ -444,8 +464,64 @@ const posts = [
           a.addEventListener("click", () => {
             nav.classList.remove("open");
             toggle.setAttribute("aria-expanded", "false");
+            nav.querySelectorAll<HTMLElement>(".dropdown-menu.open").forEach((m) => m.classList.remove("open"));
+            nav.querySelectorAll(".nav-toggle-btn").forEach((b) => b.setAttribute("aria-expanded", "false"));
           }),
         );
+
+        // Dropdown menus (Services, Pages) — click to toggle, single-open.
+        const dropToggles = nav.querySelectorAll<HTMLButtonElement>(".nav-toggle-btn");
+        dropToggles.forEach((btn) => {
+          const menu = document.getElementById(btn.getAttribute("aria-controls") || "");
+          if (!menu) return;
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const willOpen = !menu.classList.contains("open");
+            nav.querySelectorAll<HTMLElement>(".dropdown-menu.open").forEach((m) => m.classList.remove("open"));
+            dropToggles.forEach((b) => b.setAttribute("aria-expanded", "false"));
+            if (willOpen) {
+              menu.classList.add("open");
+              btn.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+        document.addEventListener("click", () => {
+          nav.querySelectorAll<HTMLElement>(".dropdown-menu.open").forEach((m) => m.classList.remove("open"));
+          dropToggles.forEach((b) => b.setAttribute("aria-expanded", "false"));
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            nav.querySelectorAll<HTMLElement>(".dropdown-menu.open").forEach((m) => m.classList.remove("open"));
+            dropToggles.forEach((b) => b.setAttribute("aria-expanded", "false"));
+          }
+        });
+      };
+
+      // Scroll-spy: highlight the nav link for the section in view.
+      const startScrollSpy = () => {
+        const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('#primary-nav a.nav-link'));
+        const map = new Map<string, HTMLAnchorElement>();
+        links.forEach((a) => {
+          const id = (a.getAttribute("href") || "").replace("#", "");
+          if (id) map.set(id, a);
+        });
+        const ids = [...map.keys()];
+        if (!ids.length || !("IntersectionObserver" in window)) return;
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                links.forEach((l) => l.classList.remove("active"));
+                map.get(e.target.id)?.classList.add("active");
+              }
+            });
+          },
+          { rootMargin: "-45% 0px -50% 0px" },
+        );
+        ids.forEach((id) => {
+          const el = id === "top" ? document.getElementById("top") : document.getElementById(id);
+          if (el) io.observe(el);
+        });
       };
 
       // Sticky-header shadow on scroll.
@@ -462,6 +538,7 @@ const posts = [
         startCounters();
         startFaq();
         startNav();
+        startScrollSpy();
         startHeader();
       };
 
@@ -548,14 +625,26 @@ const posts = [
         gap: 24px;
       }
 
-      .site-header nav a {
-        position: relative;
-        font-size: 0.88rem;
-        font-weight: 700;
-        padding: 4px 0;
+      .site-header nav {
+        align-items: center;
       }
 
-      .site-header nav a::after {
+      .site-header nav .nav-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #f7f7ef;
+        background: transparent;
+        border: 0;
+        padding: 4px 0;
+        font-family: inherit;
+        cursor: pointer;
+      }
+
+      .site-header nav .nav-link::after {
         content: "";
         position: absolute;
         left: 0;
@@ -566,9 +655,85 @@ const posts = [
         transition: width 200ms ease;
       }
 
-      .site-header nav a:hover::after,
-      .site-header nav a:focus-visible::after {
+      .site-header nav .nav-link:hover,
+      .site-header nav .nav-link.active {
+        color: #fff326;
+      }
+
+      .site-header nav .nav-link:hover::after,
+      .site-header nav .nav-link:focus-visible::after,
+      .site-header nav .nav-link.active::after {
         width: 100%;
+      }
+
+      .site-header nav .nav-link i {
+        font-size: 0.7rem;
+        transition: transform 200ms ease;
+      }
+
+      .nav-dropdown {
+        position: relative;
+      }
+
+      .nav-toggle-btn[aria-expanded="true"] i {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 0;
+        min-width: 220px;
+        display: none;
+        flex-direction: column;
+        padding: 12px 0;
+        background: #1e1e1e;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+        z-index: 30;
+      }
+
+      .nav-dropdown:hover .dropdown-menu,
+      .dropdown-menu.open {
+        display: flex;
+      }
+
+      .dropdown-menu a {
+        padding: 9px 22px;
+        font-size: 0.86rem;
+        font-weight: 600;
+        color: #d6d7ce;
+        white-space: nowrap;
+      }
+
+      .dropdown-menu a:hover {
+        color: #fff326;
+        background: rgba(255, 243, 38, 0.06);
+      }
+
+      .outline-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        min-height: 46px;
+        padding: 0 28px;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 0.9rem;
+        color: #ffffff;
+        background: transparent;
+        border: 1px solid #ffffff;
+        transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+      }
+
+      .outline-pill:hover,
+      .outline-pill:focus-visible {
+        transform: translateY(-2px);
+        background: #fff326;
+        border-color: #fff326;
+        color: #12130f;
       }
 
       .pill-button,
@@ -1370,6 +1535,28 @@ const posts = [
         }
 
         .site-header nav.open {
+          display: flex;
+        }
+
+        .nav-dropdown {
+          width: 100%;
+        }
+
+        .dropdown-menu {
+          position: static;
+          display: none;
+          min-width: 0;
+          width: 100%;
+          margin-top: 6px;
+          box-shadow: none;
+          background: rgba(255, 255, 255, 0.04);
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+          display: none;
+        }
+
+        .dropdown-menu.open {
           display: flex;
         }
 
