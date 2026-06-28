@@ -1,6 +1,6 @@
 [
   {
-    "file": "public/images/mobile-lift/hero-interior.jpg",
+    "file": "public/images/apex-auto-detailing/hero-interior.jpg",
     "query": "car interior detailing",
     "provider": "Unsplash API",
     "photographer": "Oliur",
@@ -10,7 +10,7 @@
     "id": "ovrOPhu8vSw"
   },
   {
-    "file": "public/images/mobile-lift/yellow-car.jpg",
+    "file": "public/images/apex-auto-detailing/yellow-car.jpg",
     "query": "yellow sports car",
     "provider": "Unsplash API",
     "photographer": "Anthony Fomin",
@@ -20,7 +20,7 @@
     "id": "IFF1zhgo4RQ"
   },
   {
-    "file": "public/images/mobile-lift/headlight.jpg",
+    "file": "public/images/apex-auto-detailing/headlight.jpg",
     "query": "car headlight detail",
     "provider": "Unsplash API",
     "photographer": "Jonathan Gallegos",
@@ -30,7 +30,7 @@
     "id": "zSJ5DiS9e7o"
   },
   {
-    "file": "public/images/mobile-lift/engine.jpg",
+    "file": "public/images/apex-auto-detailing/engine.jpg",
     "query": "car engine",
     "provider": "Unsplash API",
     "photographer": "Chad Kirchoff",
@@ -40,7 +40,7 @@
     "id": "xe-e69j6-Ds"
   },
   {
-    "file": "public/images/mobile-lift/polish.jpg",
+    "file": "public/images/apex-auto-detailing/polish.jpg",
     "query": "car polishing",
     "provider": "Unsplash API",
     "photographer": "David Glessner | Photographer & Director",
@@ -50,7 +50,7 @@
     "id": "c-ebQX7w9FI"
   },
   {
-    "file": "public/images/mobile-lift/paint.jpg",
+    "file": "public/images/apex-auto-detailing/paint.jpg",
     "query": "yellow car detail",
     "provider": "Unsplash API",
     "photographer": "Rob Wingate",
@@ -60,7 +60,7 @@
     "id": "v7tL5cRHYcY"
   },
   {
-    "file": "public/images/mobile-lift/avatar-1.jpg",
+    "file": "public/images/apex-auto-detailing/avatar-1.jpg",
     "query": "man portrait",
     "provider": "Unsplash API",
     "photographer": "Ali Morshedlou",
@@ -70,7 +70,7 @@
     "id": "WMD64tMfc4k"
   },
   {
-    "file": "public/images/mobile-lift/avatar-2.jpg",
+    "file": "public/images/apex-auto-detailing/avatar-2.jpg",
     "query": "woman portrait",
     "provider": "Unsplash API",
     "photographer": "Ayo Ogunseinde",
@@ -80,7 +80,7 @@
     "id": "6W4F62sN_yI"
   },
   {
-    "file": "public/images/mobile-lift/avatar-3.jpg",
+    "file": "public/images/apex-auto-detailing/avatar-3.jpg",
     "query": "customer portrait",
     "provider": "Unsplash API",
     "photographer": "Stefan Szankowski",
