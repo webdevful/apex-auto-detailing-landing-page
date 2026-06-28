@@ -13,7 +13,11 @@
     "design:lint": "designmd lint DESIGN.md"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.3.0",
     "@google/design.md": "^0.3.0",
-    "astro": "^7.0.3"
+    "animate.css": "^4.1.1",
+    "astro": "^7.0.3",
+    "bootstrap": "^5.3.8",
+    "wow.js": "^1.2.2"
   }
 }

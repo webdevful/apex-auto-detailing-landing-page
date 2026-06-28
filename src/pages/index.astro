@@ -1,36 +1,33 @@
 ---
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "animate.css/animate.min.css";
+
 const mediaBase = "/images/apex-auto-detailing";
 
+const features = [
+  ["fa-gem", "Advanced Detailing Technology", "Professional tools restore your car's original beauty and leave it fresh, clean, and protected."],
+  ["fa-leaf", "Eco-Friendly Products", "Water-smart methods and safe products support a cleaner finish with a lighter footprint."],
+  ["fa-shield-halved", "Satisfaction Guarantee", "Every vehicle gets a final walkaround before the keys return to your hand."],
+];
+
 const services = [
-  {
-    title: "Exterior Detailing",
-    copy: "Hand wash, clay treatment, polish, wax, and sealant for a deep gloss finish.",
-  },
-  {
-    title: "Interior Detailing",
-    copy: "Steam-cleaned seats, carpets, trim, vents, dashboard, glass, and hard-to-reach surfaces.",
-  },
-  {
-    title: "Paint Correction",
-    copy: "Swirl reduction, oxidation removal, and finishing polish for cleaner reflections.",
-  },
-  {
-    title: "Ceramic Coating",
-    copy: "Long-lasting protection against sun, dirt, rain, and road film with a high-gloss shield.",
-  },
+  ["fa-car-side", "Exterior Detailing", "Hand wash, clay treatment, polish, wax, and sealant for a deep gloss finish."],
+  ["fa-couch", "Interior Detailing", "Steam-cleaned seats, carpets, trim, vents, dashboard, glass, and hard-to-reach surfaces."],
+  ["fa-wand-magic-sparkles", "Paint Correction", "Swirl reduction, oxidation removal, and finishing polish for cleaner reflections."],
+  ["fa-shield-halved", "Ceramic Coating", "Long-lasting protection against sun, dirt, rain, and road film with a high-gloss shield."],
 ];
 
 const reasons = [
-  ["01", "Professional Expertise", "Trained detailers use careful techniques for modern paint, trim, leather, and wheels."],
-  ["02", "Premium Quality Products", "Biodegradable soaps, pH-balanced cleaners, and pro-grade finishing products."],
-  ["03", "Attention To Detail", "Edges, seams, vents, wheel barrels, glass, and high-touch interior points all get checked."],
-  ["04", "Satisfaction Guaranteed", "A final walkaround makes sure the finish meets the promised package standard."],
+  ["01", "fa-user-tie", "Professional Expertise", "Trained detailers use careful techniques for modern paint, trim, leather, and wheels."],
+  ["02", "fa-spray-can-sparkles", "Premium Quality Products", "Biodegradable soaps, pH-balanced cleaners, and pro-grade finishing products."],
+  ["03", "fa-magnifying-glass", "Attention To Detail", "Edges, seams, vents, wheel barrels, glass, and high-touch interior points all get checked."],
+  ["04", "fa-thumbs-up", "Satisfaction Guaranteed", "A final walkaround makes sure the finish meets the promised package standard."],
 ];
 
 const steps = [
-  ["01. Book Your Appointment", "Choose the package, tell us where the car is parked, and pick a time that fits your day."],
-  ["02. We Detail Your Car", "Our crew arrives prepared with water-smart tools, safe products, and a finish checklist."],
-  ["03. Enjoy the Shine", "Drive away with a refreshed vehicle, protected surfaces, and that clean-car feeling restored."],
+  ["fa-calendar-check", "01. Book Your Appointment", "Choose the package, tell us where the car is parked, and pick a time that fits your day."],
+  ["fa-soap", "02. We Detail Your Car", "Our crew arrives prepared with water-smart tools, safe products, and a finish checklist."],
+  ["fa-star", "03. Enjoy the Shine", "Drive away with a refreshed vehicle, protected surfaces, and that clean-car feeling restored."],
 ];
 
 const reviews = [
@@ -49,6 +46,7 @@ const faqs = [
   ["What is car detailing?", "Car detailing is a careful cleaning, restoration, and protection process for the interior and exterior of your vehicle."],
   ["How often should I get my car detailed?", "Most vehicles benefit from a maintenance detail every 3 to 6 months, depending on use, parking, and weather."],
   ["Do you use eco-friendly products?", "Yes. Apex Auto Detailing uses water-smart methods and biodegradable products whenever the vehicle surface allows it."],
+  ["How long does a detailing service take?", "A basic detail takes about 1.5 to 2 hours, while a full ultimate detail can take 4 to 7 hours depending on the vehicle."],
   ["Do you offer mobile detailing services?", "Yes. We bring the tools and products to your home or workplace so the service fits around your day."],
 ];
 
@@ -73,13 +71,17 @@ const posts = [
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/apex-auto-detailing/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/logo/apex-auto-detailing/favicon-16x16.png" />
     <link rel="icon" type="image/png" href="/assets/img/logo/apex-auto-detailing/favicon.png" />
+    <noscript><style>.wow{visibility:visible!important;animation:none!important;}</style></noscript>
   </head>
   <body>
     <header class="site-header" id="top">
       <a class="brand" href="#top" aria-label="Apex Auto Detailing home">
         <img src="/assets/img/logo/apex-auto-detailing/logo_white.png" alt="Apex Auto Detailing" />
       </a>
-      <nav aria-label="Primary navigation">
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav id="primary-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
@@ -93,40 +95,34 @@ const posts = [
       <section class="hero section-shell" aria-labelledby="hero-title">
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-content">
-          <p class="eyebrow">Mobile detailing at your door</p>
-          <h1 id="hero-title">Bring Back the New Car Feel with Our Professional Detailing</h1>
-          <a class="pill-button" href="#services">Let's Get Started</a>
+          <p class="eyebrow wow animate__animated animate__fadeInUp">Mobile detailing at your door</p>
+          <h1 id="hero-title" class="wow animate__animated animate__fadeInUp" data-wow-delay="0.15s">Bring Back the New Car Feel with Our Professional Detailing</h1>
+          <a class="pill-button wow animate__animated animate__fadeInUp" data-wow-delay="0.3s" href="#services">
+            Let's Get Started <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
         </div>
       </section>
 
       <section class="feature-band" aria-label="Service promises">
-        <article>
-          <span>01</span>
-          <h2>Advanced Detailing Technology</h2>
-          <p>Professional tools restore your car's original beauty and leave it fresh, clean, and protected.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h2>Eco-Friendly Products</h2>
-          <p>Water-smart methods and safe products support a cleaner finish with a lighter footprint.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h2>Satisfaction Guarantee</h2>
-          <p>Every vehicle gets a final walkaround before the keys return to your hand.</p>
-        </article>
+        {features.map(([icon, title, copy], i) => (
+          <article class="wow animate__animated animate__fadeInUp" data-wow-delay={`${0.15 * (i + 1)}s`}>
+            <span class="feature-icon"><i class={`fa-solid ${icon}`} aria-hidden="true"></i></span>
+            <h2>{title}</h2>
+            <p>{copy}</p>
+          </article>
+        ))}
       </section>
 
       <section class="about grid-section" id="about">
-        <div>
+        <div class="wow animate__animated animate__fadeInLeft">
           <p class="eyebrow">About Us</p>
           <h2>Premium car detailing that brings out the best in your vehicle.</h2>
         </div>
-        <div class="copy-stack">
+        <div class="copy-stack wow animate__animated animate__fadeInRight">
           <p>
             Apex Auto Detailing delivers careful exterior and interior detailing for busy drivers who want a showroom shine
-            without losing the day. We preserve the AxeMobile source flow: a bold promise, service cards, proof,
-            process, reviews, pricing, FAQ, and articles.
+            without losing the day. From a bold promise to service cards, proof, process, reviews, pricing, FAQ, and
+            articles, every section is built for fast, confident booking.
           </p>
           <p>
             Each package is designed around clean surfaces, protected paint, refreshed cabins, and a clear handoff.
@@ -135,32 +131,32 @@ const posts = [
       </section>
 
       <section class="services section-shell" id="services">
-        <div class="section-heading center">
+        <div class="section-heading center wow animate__animated animate__fadeInUp">
           <p class="eyebrow">Our Top Solution</p>
           <h2>Comprehensive car detailing solutions for a flawless finish</h2>
-          <p>Restore, protect, and enhance your vehicle with service options matched to the source template structure.</p>
+          <p>Restore, protect, and enhance your vehicle with service options matched to every level of care.</p>
         </div>
         <div class="service-stage">
           <div class="service-grid left">
-            {services.slice(0, 2).map((service) => (
-              <article class="service-card">
-                <span class="arrow-dot" aria-hidden="true">+</span>
-                <h3>{service.title}</h3>
-                <p>{service.copy}</p>
-                <a href="#booking">Read More</a>
+            {services.slice(0, 2).map(([icon, title, copy], i) => (
+              <article class="service-card wow animate__animated animate__fadeInLeft" data-wow-delay={`${0.15 * (i + 1)}s`}>
+                <span class="service-icon" aria-hidden="true"><i class={`fa-solid ${icon}`}></i></span>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+                <a href="#booking">Read More <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
               </article>
             ))}
           </div>
-          <figure class="car-figure">
+          <figure class="car-figure wow animate__animated animate__zoomIn">
             <img src={`${mediaBase}/yellow-car.jpg`} alt="Yellow detailed vehicle in studio lighting" />
           </figure>
           <div class="service-grid right">
-            {services.slice(2).map((service) => (
-              <article class="service-card">
-                <span class="arrow-dot" aria-hidden="true">+</span>
-                <h3>{service.title}</h3>
-                <p>{service.copy}</p>
-                <a href="#booking">Read More</a>
+            {services.slice(2).map(([icon, title, copy], i) => (
+              <article class="service-card wow animate__animated animate__fadeInRight" data-wow-delay={`${0.15 * (i + 1)}s`}>
+                <span class="service-icon" aria-hidden="true"><i class={`fa-solid ${icon}`}></i></span>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+                <a href="#booking">Read More <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
               </article>
             ))}
           </div>
@@ -168,21 +164,22 @@ const posts = [
       </section>
 
       <section class="why section-shell">
-        <div class="score-card">
+        <div class="score-card wow animate__animated animate__fadeInLeft">
           <p class="eyebrow">Why Choose Us?</p>
-          <strong>90%</strong>
+          <strong><span class="counter" data-count="90">0</span>%</strong>
           <p>Many customers trust us for repeat detailing and scheduled maintenance care.</p>
         </div>
-        <div class="why-main">
+        <div class="why-main wow animate__animated animate__fadeInRight">
           <h2>Unmatched quality, precision, and care for your car</h2>
           <p>
             We combine careful inspection, safe products, and a practical service checklist so every vehicle receives
             the right level of cleaning, polishing, and protection.
           </p>
           <div class="reason-grid">
-            {reasons.map(([number, title, copy]) => (
-              <article>
-                <span>{number}</span>
+            {reasons.map(([number, icon, title, copy], i) => (
+              <article class="wow animate__animated animate__fadeInUp" data-wow-delay={`${0.15 * (i + 1)}s`}>
+                <span class="reason-icon" aria-hidden="true"><i class={`fa-solid ${icon}`}></i></span>
+                <span class="reason-number">{number}</span>
                 <h3>{title}</h3>
                 <p>{copy}</p>
               </article>
@@ -192,20 +189,23 @@ const posts = [
       </section>
 
       <section class="process grid-section">
-        <div class="process-copy">
+        <div class="process-copy wow animate__animated animate__fadeInLeft">
           <p class="eyebrow">How It Works</p>
           <h2>Obtain your car's best look in just three easy steps.</h2>
-          <a class="pill-button" href="#contact">Let's Get In Touch</a>
+          <a class="pill-button" href="#contact">Let's Get In Touch <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           <div class="steps">
-            {steps.map(([title, copy]) => (
+            {steps.map(([icon, title, copy]) => (
               <article>
-                <h3>{title}</h3>
-                <p>{copy}</p>
+                <span class="step-icon" aria-hidden="true"><i class={`fa-solid ${icon}`}></i></span>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{copy}</p>
+                </div>
               </article>
             ))}
           </div>
         </div>
-        <figure class="quote-image">
+        <figure class="quote-image wow animate__animated animate__fadeInRight">
           <img src="/images/apex-auto-detailing/headlight.jpg" alt="Detailed yellow vehicle headlight" />
           <figcaption>
             "Your car deserves more than a quick wash. Our detailing goes the extra mile."
@@ -214,13 +214,21 @@ const posts = [
       </section>
 
       <section class="reviews section-shell">
-        <div class="section-heading center">
+        <div class="section-heading center wow animate__animated animate__fadeInUp">
           <p class="eyebrow">Customer Reviews</p>
           <h2>Customer experiences that speak for themselves</h2>
         </div>
         <div class="review-grid">
-          {reviews.map(([name, role, quote, image]) => (
-            <article>
+          {reviews.map(([name, role, quote, image], i) => (
+            <article class="wow animate__animated animate__fadeInUp" data-wow-delay={`${0.15 * (i + 1)}s`}>
+              <span class="quote-mark" aria-hidden="true"><i class="fa-solid fa-quote-left"></i></span>
+              <div class="stars" aria-label="5 star rating">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
               <p>{quote}</p>
               <div class="person">
                 <img src={`${mediaBase}/${image}`} alt={`${name} portrait`} />
@@ -232,22 +240,23 @@ const posts = [
       </section>
 
       <section class="pricing section-shell" id="pricing">
-        <div class="section-heading center">
+        <div class="section-heading center wow animate__animated animate__fadeInUp">
           <p class="eyebrow">Pricing Plan</p>
           <h2>Choose the perfect detailing package for your car</h2>
           <p>Every package follows a clear checklist, estimated timing, and protection goal.</p>
         </div>
         <div class="pricing-grid">
-          {plans.map(([name, price, time, features, note]) => (
-            <article class={name === "Premium" ? "featured" : ""}>
+          {plans.map(([name, price, time, features, note], i) => (
+            <article class={`wow animate__animated animate__fadeInUp ${name === "Premium" ? "featured" : ""}`} data-wow-delay={`${0.15 * (i + 1)}s`}>
+              {name === "Premium" && <span class="badge">Most Popular</span>}
               <h3>{name}</h3>
-              <span>{time}</span>
+              <span class="plan-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> {time}</span>
               <p>Start With</p>
               <strong>{price}</strong>
               <a class="pill-button" href="#booking">Choose This Plan</a>
               <h4>Feature:</h4>
               <ul>
-                {features.map((feature) => <li>{feature}</li>)}
+                {features.map((feature) => <li><i class="fa-solid fa-check" aria-hidden="true"></i> {feature}</li>)}
               </ul>
               <p>{note}</p>
             </article>
@@ -255,43 +264,52 @@ const posts = [
         </div>
       </section>
 
-      <section class="booking-cta" id="booking">
+      <section class="booking-cta wow animate__animated animate__fadeInUp" id="booking">
         <h2>Your car's best look is just one detail away</h2>
         <p>Book your detailing today and get <strong>30% cut off</strong></p>
-        <a class="pill-button" href="#contact">Booking Now</a>
+        <a class="pill-button" href="#contact">Booking Now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       </section>
 
       <section class="faq grid-section" id="faq">
-        <aside>
-          <p>Still Have Questions? Find Your Answers Here!</p>
-          <a href="#contact">or Contact Us</a>
+        <aside class="wow animate__animated animate__fadeInLeft">
+          <p class="eyebrow">FAQ</p>
+          <p class="faq-lead">Still Have Questions? Find Your Answers Here!</p>
+          <a class="faq-contact" href="#contact">or Contact Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </aside>
-        <div>
+        <div class="wow animate__animated animate__fadeInRight">
           <h2>Everything you need to know about our detailing services</h2>
-          <div class="faq-list">
-            {faqs.map(([question, answer]) => (
-              <details>
-                <summary>{question}</summary>
-                <p>{answer}</p>
-              </details>
+          <div class="faq-list" id="faq-accordion">
+            {faqs.map(([question, answer], i) => (
+              <div class="faq-item">
+                <button class="faq-trigger" type="button" aria-expanded={i === 0 ? "true" : "false"} aria-controls={`faq-panel-${i}`}>
+                  <span>{question}</span>
+                  <i class="fa-solid fa-plus faq-mark" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id={`faq-panel-${i}`} hidden={i !== 0}>
+                  <p>{answer}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       <section class="blog section-shell">
-        <div class="section-heading center">
+        <div class="section-heading center wow animate__animated animate__fadeInUp">
           <p class="eyebrow">Blogs & Articles</p>
           <h2>Expert tips and insights for car enthusiasts</h2>
         </div>
         <div class="blog-grid">
-          {posts.map(([title, image, category, copy]) => (
-            <article>
-              <img src={`${mediaBase}/${image}`} alt={title} />
-              <div>
+          {posts.map(([title, image, category, copy], i) => (
+            <article class="wow animate__animated animate__fadeInUp" data-wow-delay={`${0.15 * (i + 1)}s`}>
+              <div class="blog-media">
+                <img src={`${mediaBase}/${image}`} alt={title} />
+                <span class="blog-tag">{category}</span>
+              </div>
+              <div class="blog-body">
                 <h3>{title}</h3>
-                <p>{category}</p>
                 <p>{copy}</p>
+                <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
               </div>
             </article>
           ))}
@@ -303,7 +321,7 @@ const posts = [
       <div>
         <img src="/assets/img/logo/apex-auto-detailing/logo_white.png" alt="Apex Auto Detailing" />
         <p>Premium mobile car detailing services that bring out the best in your vehicle.</p>
-        <a class="outline-button" href="mailto:hello@mobilelift.example">Contact Us</a>
+        <a class="outline-button" href="mailto:hello@apexautodetailing.example">Contact Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       </div>
       <nav aria-label="Footer navigation">
         <h2>Navigation</h2>
@@ -314,715 +332,1117 @@ const posts = [
       </nav>
       <address>
         <h2>Visit Our Office</h2>
-        <p>123 Serenity Lane, Blissfield, CA 90210</p>
+        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 123 Serenity Lane, Blissfield, CA 90210</p>
         <h2>Contact Info</h2>
-        <p><a href="tel:+15551234567">(555) 123-4567</a></p>
-        <p><a href="mailto:hello@mobilelift.example">hello@mobilelift.example</a></p>
+        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+15551234567">(555) 123-4567</a></p>
+        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:hello@apexautodetailing.example">hello@apexautodetailing.example</a></p>
       </address>
     </footer>
+
+    <script>
+      import { WOW } from "wow.js";
+
+      const reveal = () =>
+        document.querySelectorAll(".wow").forEach((el) => {
+          (el as HTMLElement).style.visibility = "visible";
+        });
+
+      const startWow = () => {
+        try {
+          new WOW({
+            boxClass: "wow",
+            animateClass: "animate__animated",
+            offset: 80,
+            mobile: true,
+            live: false,
+          }).init();
+        } catch (err) {
+          reveal();
+        }
+        // Safety: if any reveal element is still hidden after load, force-show it.
+        window.setTimeout(reveal, 2600);
+      };
+
+      // Animated counter (the "90%") via IntersectionObserver.
+      const startCounters = () => {
+        const counters = document.querySelectorAll<HTMLElement>(".counter");
+        const run = (el: HTMLElement) => {
+          const target = Number(el.dataset.count || "0");
+          const duration = 1500;
+          const start = performance.now();
+          const tick = (now: number) => {
+            const p = Math.min((now - start) / duration, 1);
+            el.textContent = String(Math.round(p * target));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        };
+        if (!("IntersectionObserver" in window)) {
+          counters.forEach((c) => (c.textContent = c.dataset.count || "0"));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                run(e.target as HTMLElement);
+                obs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+        counters.forEach((c) => io.observe(c));
+      };
+
+      // Accessible FAQ accordion (single-open), Bootstrap-style behavior.
+      const startFaq = () => {
+        const triggers = document.querySelectorAll<HTMLButtonElement>(".faq-trigger");
+        triggers.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const panel = document.getElementById(btn.getAttribute("aria-controls") || "");
+            const isOpen = btn.getAttribute("aria-expanded") === "true";
+            triggers.forEach((other) => {
+              other.setAttribute("aria-expanded", "false");
+              const p = document.getElementById(other.getAttribute("aria-controls") || "");
+              if (p) p.hidden = true;
+            });
+            if (!isOpen && panel) {
+              btn.setAttribute("aria-expanded", "true");
+              panel.hidden = false;
+            }
+          });
+        });
+      };
+
+      // Mobile nav toggle.
+      const startNav = () => {
+        const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
+        const nav = document.getElementById("primary-nav");
+        if (!toggle || !nav) return;
+        toggle.addEventListener("click", () => {
+          const open = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(open));
+        });
+        nav.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          }),
+        );
+      };
+
+      // Sticky-header shadow on scroll.
+      const startHeader = () => {
+        const header = document.querySelector(".site-header");
+        if (!header) return;
+        const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 12);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+      };
+
+      const boot = () => {
+        startWow();
+        startCounters();
+        startFaq();
+        startNav();
+        startHeader();
+      };
+
+      if (document.readyState !== "loading") boot();
+      else document.addEventListener("DOMContentLoaded", boot);
+    </script>
+
+    <style>
+      :global(*) {
+        box-sizing: border-box;
+      }
+
+      :global(html) {
+        scroll-behavior: smooth;
+        background: #0b0c0b;
+      }
+
+      :global(body) {
+        margin: 0;
+        font-family: "Public Sans", Inter, Arial, sans-serif;
+        color: #f7f7ef;
+        background: #0b0c0b;
+      }
+
+      :global(a) {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      :global(img) {
+        display: block;
+        max-width: 100%;
+      }
+
+      /* Reveal elements stay visible by default; wow.js hides+reveals when JS runs. */
+      .wow {
+        visibility: visible;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        min-height: 76px;
+        padding: 16px 56px;
+        background: rgba(7, 8, 7, 0.92);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        transition: background 220ms ease, box-shadow 220ms ease;
+      }
+
+      .site-header.scrolled {
+        background: rgba(7, 8, 7, 0.98);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      .brand img {
+        width: 156px;
+        height: auto;
+      }
+
+      .nav-toggle {
+        display: none;
+        background: transparent;
+        border: 0;
+        color: #fff326;
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
+
+      .site-header nav,
+      footer nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .site-header nav a {
+        position: relative;
+        font-size: 0.88rem;
+        font-weight: 700;
+        padding: 4px 0;
+      }
+
+      .site-header nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: #fff326;
+        transition: width 200ms ease;
+      }
+
+      .site-header nav a:hover::after,
+      .site-header nav a:focus-visible::after {
+        width: 100%;
+      }
+
+      .pill-button,
+      .outline-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        min-height: 44px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 0.9rem;
+        transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      .pill-button {
+        background: #fff326;
+        color: #12130f;
+        border: 1px solid #fff326;
+      }
+
+      .pill-button:hover,
+      .pill-button:focus-visible {
+        transform: translateY(-2px) scale(1.03);
+        background: #ffffff;
+        border-color: #ffffff;
+        box-shadow: 0 12px 26px rgba(255, 243, 38, 0.22);
+      }
+
+      .pill-button.small {
+        min-height: 40px;
+        padding: 0 18px;
+        font-size: 0.78rem;
+      }
+
+      .outline-button {
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        color: #ffffff;
+      }
+
+      .outline-button:hover {
+        border-color: #fff326;
+        color: #fff326;
+      }
+
+      .section-shell,
+      .grid-section {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 640px;
+        display: grid;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(5, 6, 5, 0.98) 0%, rgba(5, 6, 5, 0.82) 46%, rgba(5, 6, 5, 0.48) 100%),
+          url("/images/apex-auto-detailing/hero-interior.jpg") center / cover no-repeat;
+        opacity: 0.84;
+        transform: scale(1.05);
+        animation: heroPan 18s ease-in-out infinite alternate;
+      }
+
+      @keyframes heroPan {
+        from { transform: scale(1.05) translateY(0); }
+        to { transform: scale(1.12) translateY(-12px); }
+      }
+
+      .hero-content {
+        position: relative;
+        max-width: 650px;
+        padding-top: 40px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin: 0 0 12px;
+        color: #fff326;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin-top: 0;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+        font-size: 4.5rem;
+        line-height: 0.94;
+        max-width: 760px;
+      }
+
+      h2 {
+        font-size: 2.7rem;
+        line-height: 1.04;
+        margin-bottom: 18px;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        line-height: 1.2;
+      }
+
+      p {
+        color: #cfd0c6;
+        line-height: 1.72;
+        font-size: 1rem;
+      }
+
+      .feature-band {
+        width: min(960px, calc(100% - 40px));
+        margin: -76px auto 90px;
+        position: relative;
+        z-index: 4;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .feature-band article,
+      .service-card,
+      .why,
+      .review-grid article,
+      .pricing-grid article,
+      .blog-grid article {
+        background: #181a18;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 8px;
+      }
+
+      .feature-band article {
+        padding: 26px 24px;
+        transition: transform 200ms ease, border-color 200ms ease;
+      }
+
+      .feature-band article:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255, 243, 38, 0.5);
+      }
+
+      .feature-icon,
+      .service-icon,
+      .reason-icon,
+      .step-icon {
+        display: inline-grid;
+        place-items: center;
+        color: #fff326;
+      }
+
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 14px;
+        border-radius: 12px;
+        background: rgba(255, 243, 38, 0.12);
+        font-size: 1.2rem;
+      }
+
+      .feature-band h2 {
+        font-size: 1.05rem;
+        margin: 4px 0 8px;
+      }
+
+      .feature-band p,
+      .service-card p,
+      .pricing-grid p,
+      .blog-grid p {
+        font-size: 0.9rem;
+      }
+
+      .grid-section {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 70px;
+        align-items: start;
+        padding: 72px 0;
+      }
+
+      .about h2 strong,
+      .why h2,
+      .faq h2 {
+        color: #ffffff;
+      }
+
+      .copy-stack {
+        border-left: 1px solid rgba(255, 243, 38, 0.38);
+        padding-left: 34px;
+      }
+
+      .section-heading {
+        max-width: 780px;
+        margin: 0 auto 42px;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .services {
+        padding: 44px 0 90px;
+      }
+
+      .service-stage {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr 1fr;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .service-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .service-grid.right {
+        margin-top: 70px;
+      }
+
+      .service-card {
+        position: relative;
+        min-height: 230px;
+        padding: 34px 24px 24px;
+        transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+      }
+
+      .service-card:hover,
+      .service-card:focus-within {
+        transform: translateY(-6px);
+        border-color: rgba(255, 243, 38, 0.56);
+        background: #1c1f1c;
+      }
+
+      .service-icon {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 14px;
+        border-radius: 50%;
+        background: #fff326;
+        color: #0e0f0c;
+        font-size: 1.25rem;
+        transition: transform 220ms ease;
+      }
+
+      .service-card:hover .service-icon {
+        transform: rotate(-8deg) scale(1.08);
+      }
+
+      .service-card a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 14px;
+        font-weight: 800;
+        color: #ffffff;
+        font-size: 0.9rem;
+      }
+
+      .service-card a:hover {
+        color: #fff326;
+      }
+
+      .car-figure {
+        margin: 0;
+        min-height: 380px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        background:
+          radial-gradient(circle at 50% 60%, rgba(255, 243, 38, 0.2), transparent 42%),
+          linear-gradient(180deg, #10110f, #090a09);
+      }
+
+      .car-figure img {
+        width: 100%;
+        border-radius: 8px;
+        mix-blend-mode: screen;
+      }
+
+      .why {
+        display: grid;
+        grid-template-columns: 0.45fr 1fr;
+        gap: 54px;
+        padding: 56px;
+        margin-top: 42px;
+        margin-bottom: 50px;
+      }
+
+      .score-card strong {
+        display: block;
+        color: #fff326;
+        font-size: 4.5rem;
+        line-height: 1;
+        margin: 34px 0 12px;
+      }
+
+      .why-main > p {
+        max-width: 720px;
+      }
+
+      .reason-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+        margin-top: 34px;
+      }
+
+      .reason-grid article {
+        position: relative;
+      }
+
+      .reason-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 12px;
+        border-radius: 10px;
+        background: rgba(255, 243, 38, 0.12);
+        font-size: 1.1rem;
+      }
+
+      .reason-number {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: rgba(255, 243, 38, 0.5);
+        font-weight: 900;
+        font-size: 0.95rem;
+      }
+
+      .reason-grid h3 {
+        margin: 8px 0;
+      }
+
+      .process {
+        align-items: center;
+      }
+
+      .steps {
+        margin-top: 32px;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .steps article {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 18px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .step-icon {
+        flex: none;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: rgba(255, 243, 38, 0.12);
+        font-size: 1.1rem;
+      }
+
+      .steps h3 {
+        margin-bottom: 6px;
+      }
+
+      .quote-image {
+        margin: 0;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .quote-image img {
+        width: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        transition: transform 600ms ease;
+      }
+
+      .quote-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .quote-image figcaption {
+        position: absolute;
+        right: 28px;
+        bottom: 28px;
+        max-width: 330px;
+        padding: 22px;
+        background: rgba(10, 10, 9, 0.84);
+        border-left: 4px solid #fff326;
+        color: #ffffff;
+        font-weight: 800;
+        line-height: 1.4;
+      }
+
+      .reviews {
+        padding: 86px 0;
+        background:
+          linear-gradient(180deg, rgba(9, 10, 9, 0.8), #0b0c0b),
+          url("/images/apex-auto-detailing/hero-interior.jpg") center / cover no-repeat fixed;
+        max-width: none;
+        width: 100%;
+      }
+
+      .reviews .section-heading,
+      .review-grid {
+        width: min(1180px, calc(100% - 40px));
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .review-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .review-grid article {
+        position: relative;
+        padding: 30px 28px;
+        transition: transform 200ms ease, border-color 200ms ease;
+      }
+
+      .review-grid article:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255, 243, 38, 0.45);
+      }
+
+      .quote-mark {
+        color: rgba(255, 243, 38, 0.5);
+        font-size: 1.4rem;
+      }
+
+      .stars {
+        display: flex;
+        gap: 4px;
+        margin: 10px 0 14px;
+        color: #fff326;
+        font-size: 0.85rem;
+      }
+
+      .person {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      .person img {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .person span {
+        display: grid;
+        gap: 2px;
+        color: #cfd0c6;
+        font-size: 0.86rem;
+      }
+
+      .person strong {
+        color: #ffffff;
+      }
+
+      .pricing {
+        padding: 80px 0;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        align-items: start;
+      }
+
+      .pricing-grid article {
+        position: relative;
+        padding: 32px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        transition: transform 200ms ease, border-color 200ms ease;
+      }
+
+      .pricing-grid article:hover {
+        transform: translateY(-8px);
+        border-color: rgba(255, 243, 38, 0.5);
+      }
+
+      .pricing-grid article.featured {
+        border-color: rgba(255, 243, 38, 0.58);
+        transform: translateY(-12px);
+        background: #1b1d18;
+      }
+
+      .pricing-grid article.featured:hover {
+        transform: translateY(-18px);
+      }
+
+      .badge {
+        position: absolute;
+        top: -12px;
+        right: 24px;
+        padding: 5px 14px;
+        border-radius: 999px;
+        background: #fff326;
+        color: #12130f;
+        font-size: 0.72rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .plan-time {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #a9aaa0;
+        font-size: 0.82rem;
+      }
+
+      .pricing-grid strong {
+        color: #fff326;
+        font-size: 2.35rem;
+        line-height: 1;
+      }
+
+      .pricing-grid ul {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .pricing-grid li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #d6d7ce;
+        font-size: 0.92rem;
+      }
+
+      .pricing-grid li i {
+        color: #fff326;
+        font-size: 0.8rem;
+      }
+
+      .booking-cta {
+        width: min(900px, calc(100% - 40px));
+        margin: 40px auto 80px;
+        padding: 70px 28px;
+        text-align: center;
+        border-radius: 14px;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255, 243, 38, 0.18), transparent 52%),
+          #141612;
+        border: 1px solid rgba(255, 243, 38, 0.18);
+      }
+
+      .booking-cta h2 {
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .booking-cta strong {
+        color: #fff326;
+      }
+
+      .faq aside {
+        padding-top: 10px;
+      }
+
+      .faq-lead {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.05rem;
+      }
+
+      .faq-contact {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #fff326;
+        font-weight: 800;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .faq-item {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        background: #161816;
+        overflow: hidden;
+        transition: border-color 200ms ease;
+      }
+
+      .faq-item:has(.faq-trigger[aria-expanded="true"]) {
+        border-color: rgba(255, 243, 38, 0.5);
+      }
+
+      .faq-trigger {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px 22px;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        text-align: left;
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 1rem;
+        font-family: inherit;
+      }
+
+      .faq-mark {
+        flex: none;
+        color: #fff326;
+        transition: transform 240ms ease;
+      }
+
+      .faq-trigger[aria-expanded="true"] .faq-mark {
+        transform: rotate(45deg);
+      }
+
+      .faq-panel {
+        padding: 0 22px 20px;
+        animation: faqOpen 260ms ease;
+      }
+
+      .faq-panel p {
+        margin: 0;
+      }
+
+      @keyframes faqOpen {
+        from { opacity: 0; transform: translateY(-6px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .blog {
+        padding: 78px 0 92px;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .blog-grid article {
+        overflow: hidden;
+        transition: transform 200ms ease, border-color 200ms ease;
+      }
+
+      .blog-grid article:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255, 243, 38, 0.45);
+      }
+
+      .blog-media {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .blog-media img {
+        width: 100%;
+        aspect-ratio: 1.42;
+        object-fit: cover;
+        transition: transform 400ms ease;
+      }
+
+      .blog-grid article:hover .blog-media img {
+        transform: scale(1.08);
+      }
+
+      .blog-tag {
+        position: absolute;
+        left: 16px;
+        top: 16px;
+        padding: 5px 12px;
+        border-radius: 999px;
+        background: #fff326;
+        color: #12130f;
+        font-size: 0.72rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .blog-body {
+        padding: 22px;
+      }
+
+      .blog-body h3 {
+        margin-bottom: 10px;
+      }
+
+      .blog-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+        font-weight: 800;
+        font-size: 0.88rem;
+        color: #fff326;
+      }
+
+      footer {
+        display: grid;
+        grid-template-columns: 1.25fr 0.8fr 1fr;
+        gap: 54px;
+        padding: 64px max(40px, calc((100vw - 1180px) / 2));
+        background: #151715;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      footer img {
+        width: 170px;
+        margin-bottom: 18px;
+      }
+
+      footer nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      footer nav a:hover {
+        color: #fff326;
+      }
+
+      footer h2 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+      }
+
+      address {
+        font-style: normal;
+      }
+
+      address i {
+        color: #fff326;
+        margin-right: 8px;
+      }
+
+      @media (max-width: 980px) {
+        .site-header {
+          padding: 14px 22px;
+          flex-wrap: wrap;
+        }
+
+        .nav-toggle {
+          display: inline-grid;
+          place-items: center;
+          order: 2;
+        }
+
+        .site-header nav {
+          order: 4;
+          width: 100%;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 6px;
+          padding-top: 10px;
+        }
+
+        .site-header nav.open {
+          display: flex;
+        }
+
+        h1 {
+          font-size: 3.3rem;
+        }
+
+        h2 {
+          font-size: 2.15rem;
+        }
+
+        .feature-band,
+        .service-stage,
+        .why,
+        .review-grid,
+        .pricing-grid,
+        .blog-grid,
+        footer,
+        .grid-section {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-band {
+          margin-top: -44px;
+        }
+
+        .service-grid.right,
+        .pricing-grid article.featured {
+          margin-top: 0;
+          transform: none;
+        }
+
+        .reviews {
+          background-attachment: scroll;
+        }
+
+        .why {
+          padding: 32px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .site-header {
+          position: sticky;
+        }
+
+        .brand img {
+          width: 136px;
+        }
+
+        .site-header .pill-button {
+          display: none;
+        }
+
+        .hero {
+          min-height: 560px;
+        }
+
+        h1 {
+          font-size: 2.45rem;
+        }
+
+        h2 {
+          font-size: 1.75rem;
+        }
+
+        .grid-section {
+          gap: 30px;
+          padding: 50px 0;
+        }
+
+        .reason-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .copy-stack {
+          padding-left: 20px;
+        }
+
+        .feature-band article,
+        .service-card,
+        .review-grid article,
+        .pricing-grid article {
+          padding: 22px;
+        }
+
+        .quote-image figcaption {
+          position: static;
+          border-left: 0;
+          border-top: 4px solid #fff326;
+        }
+
+        footer {
+          padding: 44px 22px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .wow {
+          animation: none !important;
+          visibility: visible !important;
+        }
+        .hero-bg {
+          animation: none;
+        }
+      }
+    </style>
   </body>
 </html>
-
-<style>
-  :global(*) {
-    box-sizing: border-box;
-  }
-
-  :global(html) {
-    scroll-behavior: smooth;
-    background: #0b0c0b;
-  }
-
-  :global(body) {
-    margin: 0;
-    font-family: Inter, Arial, sans-serif;
-    color: #f7f7ef;
-    background: #0b0c0b;
-  }
-
-  :global(a) {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  :global(img) {
-    display: block;
-    max-width: 100%;
-  }
-
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    min-height: 76px;
-    padding: 16px 56px;
-    background: rgba(7, 8, 7, 0.92);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-  }
-
-  .brand img {
-    width: 156px;
-    height: auto;
-  }
-
-  .site-header nav,
-  footer nav {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .site-header nav a {
-    font-size: 0.88rem;
-    font-weight: 700;
-  }
-
-  .pill-button,
-  .outline-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 0 22px;
-    border-radius: 999px;
-    font-weight: 800;
-    font-size: 0.9rem;
-    transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
-  }
-
-  .pill-button {
-    background: #fff326;
-    color: #12130f;
-    border: 1px solid #fff326;
-  }
-
-  .pill-button:hover,
-  .pill-button:focus-visible {
-    transform: translateY(-2px);
-    background: #ffffff;
-    border-color: #ffffff;
-  }
-
-  .pill-button.small {
-    min-height: 40px;
-    padding: 0 18px;
-    font-size: 0.78rem;
-  }
-
-  .outline-button {
-    border: 1px solid rgba(255, 255, 255, 0.42);
-    color: #ffffff;
-  }
-
-  .section-shell,
-  .grid-section {
-    width: min(1180px, calc(100% - 40px));
-    margin: 0 auto;
-  }
-
-  .hero {
-    position: relative;
-    min-height: 640px;
-    display: grid;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(90deg, rgba(5, 6, 5, 0.98) 0%, rgba(5, 6, 5, 0.82) 46%, rgba(5, 6, 5, 0.48) 100%),
-      url("/images/apex-auto-detailing/hero-interior.jpg") center / cover no-repeat;
-    opacity: 0.84;
-  }
-
-  .hero-content {
-    position: relative;
-    max-width: 650px;
-    padding-top: 40px;
-  }
-
-  .eyebrow {
-    margin: 0 0 12px;
-    color: #fff326;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 0.78rem;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  p {
-    margin-top: 0;
-    letter-spacing: 0;
-  }
-
-  h1 {
-    margin-bottom: 30px;
-    font-size: 4.5rem;
-    line-height: 0.94;
-    max-width: 760px;
-  }
-
-  h2 {
-    font-size: 2.7rem;
-    line-height: 1.04;
-    margin-bottom: 18px;
-  }
-
-  h3 {
-    font-size: 1.25rem;
-    line-height: 1.2;
-  }
-
-  p {
-    color: #cfd0c6;
-    line-height: 1.72;
-    font-size: 1rem;
-  }
-
-  .feature-band {
-    width: min(900px, calc(100% - 40px));
-    margin: -76px auto 90px;
-    position: relative;
-    z-index: 4;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .feature-band article,
-  .service-card,
-  .why,
-  .review-grid article,
-  .pricing-grid article,
-  .blog-grid article {
-    background: #181a18;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 8px;
-  }
-
-  .feature-band article {
-    padding: 24px;
-  }
-
-  .feature-band span,
-  .reason-grid span {
-    color: #fff326;
-    font-weight: 900;
-  }
-
-  .feature-band h2 {
-    font-size: 1rem;
-    margin: 8px 0 8px;
-  }
-
-  .feature-band p,
-  .service-card p,
-  .pricing-grid p,
-  .blog-grid p {
-    font-size: 0.9rem;
-  }
-
-  .grid-section {
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 70px;
-    align-items: start;
-    padding: 72px 0;
-  }
-
-  .about h2 strong,
-  .why h2,
-  .faq h2 {
-    color: #ffffff;
-  }
-
-  .copy-stack {
-    border-left: 1px solid rgba(255, 243, 38, 0.38);
-    padding-left: 34px;
-  }
-
-  .section-heading {
-    max-width: 780px;
-    margin: 0 auto 42px;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  .services {
-    padding: 44px 0 90px;
-  }
-
-  .service-stage {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr 1fr;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .service-grid {
-    display: grid;
-    gap: 24px;
-  }
-
-  .service-grid.right {
-    margin-top: 70px;
-  }
-
-  .service-card {
-    position: relative;
-    min-height: 230px;
-    padding: 36px 24px 24px;
-    transition: transform 180ms ease, border-color 180ms ease;
-  }
-
-  .service-card:hover,
-  .service-card:focus-within {
-    transform: translateY(-6px);
-    border-color: rgba(255, 243, 38, 0.56);
-  }
-
-  .arrow-dot {
-    position: absolute;
-    top: -18px;
-    left: 22px;
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: #fff326;
-    color: #0e0f0c;
-    font-weight: 900;
-  }
-
-  .service-card a {
-    font-weight: 800;
-    color: #ffffff;
-    font-size: 0.9rem;
-  }
-
-  .car-figure {
-    margin: 0;
-    min-height: 380px;
-    display: grid;
-    place-items: center;
-    border-radius: 10px;
-    background:
-      radial-gradient(circle at 50% 60%, rgba(255, 243, 38, 0.2), transparent 42%),
-      linear-gradient(180deg, #10110f, #090a09);
-  }
-
-  .car-figure img {
-    width: 100%;
-    border-radius: 8px;
-    mix-blend-mode: screen;
-  }
-
-  .why {
-    display: grid;
-    grid-template-columns: 0.45fr 1fr;
-    gap: 54px;
-    padding: 56px;
-    margin-top: 42px;
-    margin-bottom: 50px;
-  }
-
-  .score-card strong {
-    display: block;
-    color: #fff326;
-    font-size: 4.5rem;
-    line-height: 1;
-    margin: 34px 0 12px;
-  }
-
-  .why-main > p {
-    max-width: 720px;
-  }
-
-  .reason-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
-    margin-top: 34px;
-  }
-
-  .reason-grid h3 {
-    margin: 8px 0;
-  }
-
-  .process {
-    align-items: center;
-  }
-
-  .steps {
-    margin-top: 32px;
-    border-top: 1px solid rgba(255, 255, 255, 0.16);
-  }
-
-  .steps article {
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-  }
-
-  .steps h3 {
-    margin-bottom: 8px;
-  }
-
-  .quote-image {
-    margin: 0;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .quote-image img {
-    width: 100%;
-    min-height: 420px;
-    object-fit: cover;
-  }
-
-  .quote-image figcaption {
-    position: absolute;
-    right: 28px;
-    bottom: 28px;
-    max-width: 330px;
-    padding: 22px;
-    background: rgba(10, 10, 9, 0.84);
-    border-left: 4px solid #fff326;
-    color: #ffffff;
-    font-weight: 800;
-    line-height: 1.4;
-  }
-
-  .reviews {
-    padding: 86px 0;
-    background:
-      linear-gradient(180deg, rgba(9, 10, 9, 0.8), #0b0c0b),
-      url("/images/apex-auto-detailing/hero-interior.jpg") center / cover no-repeat;
-    max-width: none;
-    width: 100%;
-  }
-
-  .reviews .section-heading,
-  .review-grid {
-    width: min(1180px, calc(100% - 40px));
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .review-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .review-grid article {
-    padding: 28px;
-  }
-
-  .person {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-top: 24px;
-  }
-
-  .person img {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .person span {
-    display: grid;
-    gap: 2px;
-    color: #cfd0c6;
-    font-size: 0.86rem;
-  }
-
-  .person strong {
-    color: #ffffff;
-  }
-
-  .pricing {
-    padding: 80px 0;
-  }
-
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .pricing-grid article {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .pricing-grid article.featured {
-    border-color: rgba(255, 243, 38, 0.58);
-    transform: translateY(-12px);
-  }
-
-  .pricing-grid span {
-    color: #a9aaa0;
-    font-size: 0.82rem;
-  }
-
-  .pricing-grid strong {
-    color: #fff326;
-    font-size: 2.35rem;
-    line-height: 1;
-  }
-
-  .pricing-grid ul {
-    display: grid;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .pricing-grid li {
-    position: relative;
-    padding-left: 22px;
-    color: #d6d7ce;
-    font-size: 0.92rem;
-  }
-
-  .pricing-grid li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.45em;
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-    background: #fff326;
-  }
-
-  .booking-cta {
-    width: min(900px, calc(100% - 40px));
-    margin: 40px auto 80px;
-    padding: 70px 28px;
-    text-align: center;
-    background: radial-gradient(circle at 50% 0%, rgba(255, 243, 38, 0.18), transparent 42%);
-  }
-
-  .booking-cta h2 {
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .booking-cta strong {
-    color: #fff326;
-  }
-
-  .faq aside {
-    padding-top: 10px;
-  }
-
-  .faq aside a {
-    color: #fff326;
-    font-weight: 800;
-  }
-
-  .faq-list {
-    display: grid;
-    gap: 10px;
-  }
-
-  details {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 18px 0;
-  }
-
-  summary {
-    cursor: pointer;
-    color: #ffffff;
-    font-weight: 800;
-    list-style: none;
-  }
-
-  summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .blog {
-    padding: 78px 0 92px;
-  }
-
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .blog-grid article {
-    overflow: hidden;
-  }
-
-  .blog-grid img {
-    width: 100%;
-    aspect-ratio: 1.42;
-    object-fit: cover;
-    transition: transform 180ms ease;
-  }
-
-  .blog-grid article:hover img {
-    transform: scale(1.05) rotate(1deg);
-  }
-
-  .blog-grid div {
-    padding: 22px;
-  }
-
-  .blog-grid h3 {
-    margin-bottom: 10px;
-  }
-
-  footer {
-    display: grid;
-    grid-template-columns: 1.25fr 0.8fr 1fr;
-    gap: 54px;
-    padding: 64px max(40px, calc((100vw - 1180px) / 2));
-    background: #151715;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  footer img {
-    width: 170px;
-    margin-bottom: 18px;
-  }
-
-  footer nav {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  footer h2 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-  }
-
-  address {
-    font-style: normal;
-  }
-
-  @media (max-width: 980px) {
-    .site-header {
-      padding: 14px 22px;
-      flex-wrap: wrap;
-    }
-
-    .site-header nav {
-      order: 3;
-      width: 100%;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    h1 {
-      font-size: 3.3rem;
-    }
-
-    h2 {
-      font-size: 2.15rem;
-    }
-
-    .feature-band,
-    .service-stage,
-    .why,
-    .review-grid,
-    .pricing-grid,
-    .blog-grid,
-    footer,
-    .grid-section {
-      grid-template-columns: 1fr;
-    }
-
-    .feature-band {
-      margin-top: -44px;
-    }
-
-    .service-grid.right,
-    .pricing-grid article.featured {
-      margin-top: 0;
-      transform: none;
-    }
-
-    .why {
-      padding: 32px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .site-header {
-      position: relative;
-    }
-
-    .brand img {
-      width: 136px;
-    }
-
-    .site-header .pill-button {
-      width: 100%;
-    }
-
-    .hero {
-      min-height: 560px;
-    }
-
-    h1 {
-      font-size: 2.45rem;
-    }
-
-    h2 {
-      font-size: 1.75rem;
-    }
-
-    .grid-section {
-      gap: 30px;
-      padding: 50px 0;
-    }
-
-    .copy-stack {
-      padding-left: 20px;
-    }
-
-    .feature-band article,
-    .service-card,
-    .review-grid article,
-    .pricing-grid article {
-      padding: 22px;
-    }
-
-    .quote-image figcaption {
-      position: static;
-      border-left: 0;
-      border-top: 4px solid #fff326;
-    }
-
-    footer {
-      padding: 44px 22px;
-    }
-  }
-</style>
