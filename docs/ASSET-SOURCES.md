@@ -1,9 +1,9 @@
-# Mobile Lift Asset Sources
+# Apex Auto Detailing Asset Sources
 
 ## WLFS Identity
 
-- `public/assets/img/logo/mobile-lift/logo.png` and `logo_white.png`: WLFS header/footer lockup generated with `tools/generate_logos.py`; source role is the landing-page identity slot, cursive web mark plus divider plus `Mobile Lift`.
-- `public/assets/img/logo/mobile-lift/favicon-tab.png` and `favicon-tab_white.png`: WLFS browser-tab identity proof, cursive W plus divider plus `Mobile Lift`.
+- `public/assets/img/logo/mobile-lift/logo.png` and `logo_white.png`: WLFS header/footer lockup generated with `tools/generate_logos.py`; source role is the landing-page identity slot, cursive web mark plus divider plus `Apex Auto Detailing`.
+- `public/assets/img/logo/mobile-lift/favicon-tab.png` and `favicon-tab_white.png`: WLFS browser-tab identity proof, cursive W plus divider plus `Apex Auto Detailing`.
 - `public/assets/img/logo/mobile-lift/favicon.png`, `favicon-32x32.png`, and `favicon-16x16.png`: WLFS square browser favicon files linked from the page head.
 
 ## Unsplash API Photography

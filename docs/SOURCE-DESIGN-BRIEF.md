@@ -1,4 +1,4 @@
-# Mobile Lift Source Design Brief
+# Apex Auto Detailing Source Design Brief
 
 ## Source Facts
 
@@ -12,7 +12,7 @@
 
 ## Final Build Mapping
 
-- Header/footer identity: WLFS `Mobile Lift` lockup.
+- Header/footer identity: WLFS `Apex Auto Detailing` lockup.
 - Hero background: source dashboard/interior background mapped to local `hero-interior.jpg`.
 - Yellow vehicle service slot: source yellow crossover PNG mapped to local `yellow-car.jpg`.
 - Process quote image: source yellow headlight/grille photo mapped to local `headlight.jpg`.
