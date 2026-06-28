@@ -19,3 +19,7 @@ Asset shape contract terms: source format, alpha, transparency, aspect ratio, cs
 - `public/images/apex-auto-detailing/polish.jpg`: Unsplash API, photographer David Glessner, source format jpg, no alpha/transparency requirement, aspect ratio blog card, css usage image element, rendered width blog thumbnail, rendered height blog thumbnail, dimensions 900x620, section context blog, content relevance car polishing, not reused from source.
 - `public/images/apex-auto-detailing/paint.jpg`: Unsplash API, photographer Rob Wingate, source format jpg, no alpha/transparency requirement, aspect ratio blog card, css usage image element, rendered width blog thumbnail, rendered height blog thumbnail, dimensions 900x620, section context blog, content relevance yellow car paint protection, not reused from source.
 - `public/images/apex-auto-detailing/avatar-1.jpg`, `avatar-2.jpg`, `avatar-3.jpg`: Unsplash API portraits used for testimonial cards; source format jpg, no alpha/transparency requirement, square rendered dimensions 54x54 in cards, section context reviews, content relevance customer portrait, not reused from source.
+
+## Fidelity-return repair (2026-06-28)
+- public/videos/reviews-bg.mp4 — Pixabay licensed car-detailing background video (see reviews-bg.attribution.json); replaces source videos/video-background.mp4 in the reviews section (source video is source-port evidence only).
+- public/images/apex-auto-detailing/avatar-4..6.jpg — Unsplash licensed portraits for testimonials 4-6 (6 total to match source).

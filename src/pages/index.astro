@@ -32,8 +32,11 @@ const steps = [
 
 const reviews = [
   ["Raul Axios", "Auto Dealer", "Absolutely incredible service. My car looked brand new inside and out, and the attention to detail was obvious in every surface.", "avatar-1.jpg"],
-  ["Taki Wanabe", "Car Owner", "The crew was professional, friendly, and careful around every part of the vehicle. It felt like a proper reset.", "avatar-3.jpg"],
-  ["Hafsha Jasmine", "Daily Driver", "Interior stains, dust, and dull paint were all handled in one visit. I booked the maintenance plan before they left.", "avatar-2.jpg"],
+  ["Ubeid Una", "Car Owner", "I've used many detailing services before, but this one exceeded my expectations. Professional, friendly, and an amazing job on my vehicle.", "avatar-2.jpg"],
+  ["Taki Wanabe", "Vintage Car Owner", "I was blown away by the transformation. From the deep interior clean to the protected exterior, my car looks better than ever.", "avatar-3.jpg"],
+  ["Hafsha Jasmine", "Auto Dealer", "The team took extra care detailing my car and the results are nothing short of amazing. I'll definitely return for regular maintenance.", "avatar-5.jpg"],
+  ["Akio Mirfaq", "Car Owner", "The best detailing service I've ever had. My car looks immaculate and it feels like I'm driving a completely different vehicle.", "avatar-4.jpg"],
+  ["Olivia Seamo", "Car Collector", "From the moment I walked in I knew I was in good hands. Knowledgeable, friendly, and an incredible job. Spotless inside and out.", "avatar-6.jpg"],
 ];
 
 const plans = [
@@ -214,6 +217,19 @@ const posts = [
       </section>
 
       <section class="reviews section-shell">
+        <video
+          class="reviews-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster={`${mediaBase}/hero-interior.jpg`}
+          aria-hidden="true"
+        >
+          <source src="/videos/reviews-bg.mp4" type="video/mp4" />
+        </video>
+        <div class="reviews-overlay" aria-hidden="true"></div>
         <div class="section-heading center wow animate__animated animate__fadeInUp">
           <p class="eyebrow">Customer Reviews</p>
           <h2>Customer experiences that speak for themselves</h2>
@@ -956,16 +972,34 @@ const posts = [
       }
 
       .reviews {
+        position: relative;
         padding: 86px 0;
-        background:
-          linear-gradient(180deg, rgba(9, 10, 9, 0.8), #0b0c0b),
-          url("/images/apex-auto-detailing/hero-interior.jpg") center / cover no-repeat fixed;
         max-width: none;
         width: 100%;
+        overflow: hidden;
+        background: #0b0c0b;
+      }
+
+      .reviews-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      .reviews-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(7, 8, 7, 0.86), rgba(7, 8, 7, 0.78));
       }
 
       .reviews .section-heading,
       .review-grid {
+        position: relative;
+        z-index: 2;
         width: min(1180px, calc(100% - 40px));
         margin-left: auto;
         margin-right: auto;

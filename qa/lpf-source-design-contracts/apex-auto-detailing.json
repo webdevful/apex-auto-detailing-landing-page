@@ -59,8 +59,12 @@
       "label": "Hero dashboard background",
       "sourceRef": "images/car-dashboard-modern-luxury-interior-steering-wh-2025-01-10-13-41-08-utc.jpg",
       "finalFile": "public/images/apex-auto-detailing/hero-interior.jpg",
-      "requiredFiles": ["public/images/apex-auto-detailing/hero-interior.jpg"],
-      "requiredRefs": ["/images/apex-auto-detailing/hero-interior.jpg"],
+      "requiredFiles": [
+        "public/images/apex-auto-detailing/hero-interior.jpg"
+      ],
+      "requiredRefs": [
+        "/images/apex-auto-detailing/hero-interior.jpg"
+      ],
       "sourceRole": "static photography background",
       "provider": "Unsplash API",
       "source format": "jpg",
@@ -74,8 +78,12 @@
       "label": "Process vehicle detail",
       "sourceRef": "images/car-grille-and-headlight-2025-01-08-23-47-13-utc.jpg",
       "finalFile": "public/images/apex-auto-detailing/headlight.jpg",
-      "requiredFiles": ["public/images/apex-auto-detailing/headlight.jpg"],
-      "requiredRefs": ["/images/apex-auto-detailing/headlight.jpg"],
+      "requiredFiles": [
+        "public/images/apex-auto-detailing/headlight.jpg"
+      ],
+      "requiredRefs": [
+        "/images/apex-auto-detailing/headlight.jpg"
+      ],
       "sourceRole": "static photography",
       "provider": "Unsplash API",
       "source format": "jpg",
@@ -89,8 +97,12 @@
       "label": "CTA plastic-care background",
       "sourceRef": "images/car-detailing-plastic-care-2024-12-13-06-56-27-utc.jpg",
       "finalFile": "public/images/apex-auto-detailing/hero-interior.jpg",
-      "requiredFiles": ["public/images/apex-auto-detailing/hero-interior.jpg"],
-      "requiredRefs": ["/images/apex-auto-detailing/hero-interior.jpg"],
+      "requiredFiles": [
+        "public/images/apex-auto-detailing/hero-interior.jpg"
+      ],
+      "requiredRefs": [
+        "/images/apex-auto-detailing/hero-interior.jpg"
+      ],
       "sourceRole": "static photography background",
       "provider": "Unsplash API",
       "source format": "jpg",
@@ -111,6 +123,16 @@
       "path": "public/images/apex-auto-detailing/hero-interior.jpg",
       "minWidth": 1200,
       "minHeight": 700
+    }
+  ],
+  "videoBackgroundChecks": [
+    {
+      "section": "reviews / Customer Experiences",
+      "requirement": "full-cover autoplay muted loop playsinline <video> background",
+      "requiredFile": "public/videos/reviews-bg.mp4",
+      "sourceRole": "source videos/video-background.mp4 (source-port evidence only)",
+      "replacementProvider": "Pixabay licensed car-detailing clip",
+      "forbidden": "flattening the video slot to a static background image"
     }
   ]
 }
