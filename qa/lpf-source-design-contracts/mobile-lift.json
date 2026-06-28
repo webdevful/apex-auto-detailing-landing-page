@@ -1,0 +1,116 @@
+{
+  "slug": "mobile-lift",
+  "sourceUrl": "https://axemobile.widagdos.net/?storefront=envato-elements",
+  "sourceFacts": {
+    "sectionOrder": [
+      "header",
+      "hero",
+      "feature cards",
+      "about",
+      "services",
+      "why choose",
+      "process",
+      "reviews",
+      "pricing",
+      "cta",
+      "faq",
+      "blog",
+      "footer"
+    ],
+    "typography": "Source CSS records h1 72px desktop, h2 48px desktop, p/a 18px desktop with responsive reductions.",
+    "visualLanguage": "Black automotive canvas, acid-yellow accents, dark rounded cards, yellow vehicle imagery, pill CTAs, hover card movement."
+  },
+  "sourceChecks": [
+    {
+      "path": "docs/SOURCE-DESIGN-BRIEF.md",
+      "contains": "Source: AxeMobile by Widagdos via Envato Elements."
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "Bring Back the New Car Feel with Our Professional Detailing"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "Choose the perfect detailing package for your car"
+    }
+  ],
+  "requiredFiles": [
+    "docs/SOURCE-DESIGN-BRIEF.md",
+    "docs/ASSET-SOURCES.md",
+    "public/images/mobile-lift/manifest.json",
+    "public/images/mobile-lift/hero-interior.jpg",
+    "public/images/mobile-lift/yellow-car.jpg",
+    "public/images/mobile-lift/headlight.jpg",
+    "public/assets/img/logo/mobile-lift/logo.png",
+    "public/assets/img/logo/mobile-lift/logo_white.png",
+    "public/assets/img/logo/mobile-lift/favicon.png",
+    "public/assets/img/logo/mobile-lift/favicon-32x32.png",
+    "public/assets/img/logo/mobile-lift/favicon-16x16.png"
+  ],
+  "forbiddenSourceRefs": [
+    "images/Main-Logo.png",
+    "images/Crossover-Sports-Car-Yellow-Simplified.H04.2k.png",
+    "images/car-grille-and-headlight-2025-01-08-23-47-13-utc.jpg",
+    "images/team/6Team20.jpg",
+    "videos/video-background.mp4"
+  ],
+  "backgroundImageChecks": [
+    {
+      "label": "Hero dashboard background",
+      "sourceRef": "images/car-dashboard-modern-luxury-interior-steering-wh-2025-01-10-13-41-08-utc.jpg",
+      "finalFile": "public/images/mobile-lift/hero-interior.jpg",
+      "requiredFiles": ["public/images/mobile-lift/hero-interior.jpg"],
+      "requiredRefs": ["/images/mobile-lift/hero-interior.jpg"],
+      "sourceRole": "static photography background",
+      "provider": "Unsplash API",
+      "source format": "jpg",
+      "aspect ratio": "wide hero background",
+      "rendered width": "full viewport hero area",
+      "rendered height": "desktop hero section",
+      "section context": "hero",
+      "content relevance": "car interior dashboard detailing"
+    },
+    {
+      "label": "Process vehicle detail",
+      "sourceRef": "images/car-grille-and-headlight-2025-01-08-23-47-13-utc.jpg",
+      "finalFile": "public/images/mobile-lift/headlight.jpg",
+      "requiredFiles": ["public/images/mobile-lift/headlight.jpg"],
+      "requiredRefs": ["/images/mobile-lift/headlight.jpg"],
+      "sourceRole": "static photography",
+      "provider": "Unsplash API",
+      "source format": "jpg",
+      "aspect ratio": "portrait/detail card",
+      "rendered width": "process image column",
+      "rendered height": "process image column",
+      "section context": "how it works",
+      "content relevance": "car headlight detail"
+    },
+    {
+      "label": "CTA plastic-care background",
+      "sourceRef": "images/car-detailing-plastic-care-2024-12-13-06-56-27-utc.jpg",
+      "finalFile": "public/images/mobile-lift/hero-interior.jpg",
+      "requiredFiles": ["public/images/mobile-lift/hero-interior.jpg"],
+      "requiredRefs": ["/images/mobile-lift/hero-interior.jpg"],
+      "sourceRole": "static photography background",
+      "provider": "Unsplash API",
+      "source format": "jpg",
+      "aspect ratio": "wide CTA/review background",
+      "rendered width": "full width section",
+      "rendered height": "review/CTA band",
+      "section context": "reviews and background CTA",
+      "content relevance": "automotive detailing interior atmosphere"
+    }
+  ],
+  "imageChecks": [
+    {
+      "path": "public/images/mobile-lift/yellow-car.jpg",
+      "minWidth": 800,
+      "minHeight": 400
+    },
+    {
+      "path": "public/images/mobile-lift/hero-interior.jpg",
+      "minWidth": 1200,
+      "minHeight": 700
+    }
+  ]
+}
