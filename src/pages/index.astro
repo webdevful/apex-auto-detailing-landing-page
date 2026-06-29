@@ -179,22 +179,28 @@ const posts = [
       </section>
 
       <section class="why section-shell">
-        <div class="score-card wow animate__animated animate__fadeInLeft">
-          <p class="eyebrow">Why Choose Us?</p>
-          <strong><span class="counter" data-count="90">0</span>%</strong>
-          <p>Many customers trust us for repeat detailing and scheduled maintenance care.</p>
+        <div class="why-aside wow animate__animated animate__fadeInLeft">
+          <p class="why-label">Why Choose Us?</p>
+          <div class="why-score">
+            <strong><span class="counter" data-count="90">0</span>%</strong>
+            <p><strong>Many customers trust us</strong> for repeat detailing and scheduled maintenance care.</p>
+          </div>
         </div>
         <div class="why-main wow animate__animated animate__fadeInRight">
-          <h2>Unmatched quality, precision, and care for your car</h2>
-          <p>
-            We combine careful inspection, safe products, and a practical service checklist so every vehicle receives
-            the right level of cleaning, polishing, and protection.
-          </p>
+          <h2>Unmatched quality, precision, and<br /><span class="accent">care for your car</span></h2>
+          <div class="why-intro">
+            <h4>Excellence in Every Detail</h4>
+            <p>
+              We deliver unmatched quality, precision, and care in every car detailing service we provide. From
+              meticulous cleaning to expert polishing, every detail is handled with professionalism to ensure your
+              vehicle looks its absolute best.
+            </p>
+          </div>
           <div class="reason-grid">
-            {reasons.map(([number, icon, title, copy], i) => (
+            {reasons.map(([number, _icon, title, copy], i) => (
               <article class="wow animate__animated animate__fadeInUp" data-wow-delay={`${0.15 * (i + 1)}s`}>
-                <span class="reason-icon" aria-hidden="true"><i class={`fa-solid ${icon}`}></i></span>
                 <span class="reason-number">{number}</span>
+                <hr class="reason-divider" />
                 <h3>{title}</h3>
                 <p>{copy}</p>
               </article>
@@ -1039,56 +1045,108 @@ const posts = [
 
       .why {
         display: grid;
-        grid-template-columns: 0.45fr 1fr;
-        gap: 54px;
-        padding: 56px;
+        grid-template-columns: 0.34fr 1fr;
+        gap: 60px;
+        padding: 64px 60px;
         margin-top: 42px;
         margin-bottom: 50px;
+        border: 0;
+        border-radius: 28px;
       }
 
-      .score-card strong {
+      /* Left column: gray label at top, 90% + text pushed to the bottom. */
+      .why-aside {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .why-label {
+        margin: 0;
+        color: #9a9b92;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.82rem;
+      }
+
+      .why-score {
+        margin-top: auto;
+      }
+
+      .why-score strong {
         display: block;
         color: #fff326;
-        font-size: 4.5rem;
+        font-size: 5rem;
         line-height: 1;
-        margin: 34px 0 12px;
+        margin: 0 0 14px;
       }
 
-      .why-main > p {
+      .why-score p {
+        color: #9a9b92;
+        font-size: 0.95rem;
+        max-width: 280px;
+      }
+
+      .why-score p strong {
+        display: inline;
+        color: #e9eae2;
+        font-size: inherit;
+        margin: 0;
+      }
+
+      .why-main h2 .accent {
+        color: #fff326;
+      }
+
+      /* "Excellence in Every Detail" — title left, paragraph right. */
+      .why-intro {
+        display: grid;
+        grid-template-columns: 0.22fr 1fr;
+        gap: 28px;
+        margin-top: 26px;
+      }
+
+      .why-intro h4 {
+        margin: 0;
+        font-size: 1.18rem;
+        line-height: 1.25;
+        color: #ffffff;
+      }
+
+      .why-intro p {
+        margin: 0;
+        color: #9a9b92;
         max-width: 720px;
       }
 
       .reason-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 28px;
-        margin-top: 34px;
-      }
-
-      .reason-grid article {
-        position: relative;
-      }
-
-      .reason-icon {
-        width: 44px;
-        height: 44px;
-        margin-bottom: 12px;
-        border-radius: 10px;
-        background: rgba(255, 243, 38, 0.12);
-        font-size: 1.1rem;
+        gap: 44px 40px;
+        margin-top: 52px;
       }
 
       .reason-number {
-        position: absolute;
-        top: 0;
-        right: 0;
-        color: rgba(255, 243, 38, 0.5);
-        font-weight: 900;
-        font-size: 0.95rem;
+        display: block;
+        color: #fff326;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .reason-divider {
+        margin: 16px 0 20px;
+        border: 0;
+        border-top: 2px solid rgba(255, 255, 255, 0.14);
       }
 
       .reason-grid h3 {
-        margin: 8px 0;
+        margin: 0 0 12px;
+        font-size: 1.3rem;
+      }
+
+      .reason-grid p {
+        margin: 0;
+        color: #9a9b92;
       }
 
       .process {
