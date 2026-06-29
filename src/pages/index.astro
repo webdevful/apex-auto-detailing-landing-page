@@ -976,17 +976,10 @@ const posts = [
 
       .service-card-body {
         min-height: 210px;
-        padding: 56px 26px 26px;
+        padding: 64px 28px 28px;
         background: #181a18;
-        border-radius: 18px;
+        border-radius: 25px;
         transition: background 200ms ease;
-        /* Concave corner notch: scoop a circle from the top-left so the arrow
-           circle nests into the card edge (matches source). */
-        --notch-x: 26px;
-        --notch-y: 26px;
-        --notch-r: 34px;
-        -webkit-mask: radial-gradient(circle var(--notch-r) at var(--notch-x) var(--notch-y), transparent calc(var(--notch-r) - 0.5px), #000 var(--notch-r));
-        mask: radial-gradient(circle var(--notch-r) at var(--notch-x) var(--notch-y), transparent calc(var(--notch-r) - 0.5px), #000 var(--notch-r));
       }
 
       .service-card.pos-1 { left: 1%; top: 16%; }   /* Exterior — left, high */
@@ -1006,17 +999,21 @@ const posts = [
 
       .service-arrow {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 52px;
-        height: 52px;
+        top: 1px;
+        left: 1px;
+        width: 55px;
+        height: 55px;
         display: grid;
         place-items: center;
         border-radius: 50%;
         background: #fff326;
         color: #0e0f0c;
         font-size: 1.15rem;
-        transition: transform 220ms ease;
+        /* Source technique: a 15px ring of the page-background color around the
+           circle covers the card corner, so the card edge appears to curve
+           around the circle (the "notch" is this ring, not a real cutout). */
+        box-shadow: 0 0 0 15px #0b0c0b;
+        transition: transform 220ms ease, box-shadow 220ms ease;
         z-index: 3;
       }
 
