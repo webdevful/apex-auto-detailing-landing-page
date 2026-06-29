@@ -606,7 +606,14 @@ const posts = [
 
       .brand img {
         width: auto;
-        height: 56px;
+        height: 50px;
+        max-width: 100%;
+      }
+
+      @media (max-width: 1240px) and (min-width: 981px) {
+        .brand img {
+          height: 42px;
+        }
       }
 
       .nav-toggle {
