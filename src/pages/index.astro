@@ -25,9 +25,9 @@ const reasons = [
 ];
 
 const steps = [
-  ["fa-calendar-check", "01. Book Your Appointment", "Choose the package, tell us where the car is parked, and pick a time that fits your day."],
-  ["fa-soap", "02. We Detail Your Car", "Our crew arrives prepared with water-smart tools, safe products, and a finish checklist."],
-  ["fa-star", "03. Enjoy the Shine", "Drive away with a refreshed vehicle, protected surfaces, and that clean-car feeling restored."],
+  ["01. Book Your Appointment", "Choose the package, tell us where the car is parked, and pick a time that fits your day. You can book online, call us, or visit our location and we'll confirm the details."],
+  ["02. We Detail Your Car", "Our crew arrives prepared with water-smart tools, safe products, and a finish checklist, treating every surface inside and out with care."],
+  ["03. Enjoy the Shine", "Drive away with a refreshed vehicle, protected surfaces, and that clean-car feeling restored, ready to turn heads wherever you go."],
 ];
 
 const reviews = [
@@ -211,18 +211,19 @@ const posts = [
 
       <section class="process grid-section">
         <div class="process-copy wow animate__animated animate__fadeInLeft">
-          <p class="eyebrow">How It Works</p>
+          <p class="eyebrow eyebrow-muted">How It Works</p>
           <h2>Obtain your car's best look in just three easy steps.</h2>
           <a class="pill-button" href="#contact">Let's Get In Touch <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          <div class="steps">
-            {steps.map(([icon, title, copy]) => (
-              <article>
-                <span class="step-icon" aria-hidden="true"><i class={`fa-solid ${icon}`}></i></span>
-                <div>
-                  <h3>{title}</h3>
+          <div class="steps" id="steps-accordion">
+            {steps.map(([title, copy], i) => (
+              <div class="step-item">
+                <button class="step-trigger" type="button" aria-expanded={i === 0 ? "true" : "false"} aria-controls={`step-panel-${i}`}>
+                  {title}
+                </button>
+                <div class="step-panel" id={`step-panel-${i}`} hidden={i !== 0}>
                   <p>{copy}</p>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         </div>
@@ -531,10 +532,29 @@ const posts = [
         window.addEventListener("scroll", onScroll, { passive: true });
       };
 
+      // How It Works: single-open accordion (one step always expanded).
+      const startSteps = () => {
+        const triggers = document.querySelectorAll<HTMLButtonElement>(".step-trigger");
+        triggers.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            if (btn.getAttribute("aria-expanded") === "true") return;
+            const panel = document.getElementById(btn.getAttribute("aria-controls") || "");
+            triggers.forEach((other) => {
+              other.setAttribute("aria-expanded", "false");
+              const p = document.getElementById(other.getAttribute("aria-controls") || "");
+              if (p) p.hidden = true;
+            });
+            btn.setAttribute("aria-expanded", "true");
+            if (panel) panel.hidden = false;
+          });
+        });
+      };
+
       const boot = () => {
         startWow();
         startCounters();
         startFaq();
+        startSteps();
         startNav();
         startScrollSpy();
         startHeader();
@@ -822,6 +842,10 @@ const posts = [
         text-transform: uppercase;
         font-size: 0.78rem;
         letter-spacing: 0.06em;
+      }
+
+      .eyebrow-muted {
+        color: #9a9b92;
       }
 
       h1,
@@ -1153,30 +1177,42 @@ const posts = [
         align-items: center;
       }
 
+      /* How It Works: single-open accordion. */
       .steps {
-        margin-top: 32px;
-        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        margin-top: 40px;
       }
 
-      .steps article {
-        display: flex;
-        align-items: flex-start;
-        gap: 18px;
-        padding: 18px 0;
+      .step-item {
         border-bottom: 1px solid rgba(255, 255, 255, 0.16);
       }
 
-      .step-icon {
-        flex: none;
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        background: rgba(255, 243, 38, 0.12);
-        font-size: 1.1rem;
+      .step-trigger {
+        width: 100%;
+        padding: 20px 0;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        text-align: left;
+        font-family: inherit;
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #8b8c84;
+        transition: color 200ms ease;
       }
 
-      .steps h3 {
-        margin-bottom: 6px;
+      .step-trigger:hover,
+      .step-trigger[aria-expanded="true"] {
+        color: #ffffff;
+      }
+
+      .step-panel {
+        padding: 0 0 22px 40px;
+        animation: faqOpen 260ms ease;
+      }
+
+      .step-panel p {
+        margin: 0;
+        max-width: 560px;
       }
 
       .quote-image {
