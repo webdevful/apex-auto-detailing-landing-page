@@ -1419,15 +1419,23 @@ const posts = [
       }
 
       .booking-cta {
-        width: min(900px, calc(100% - 40px));
-        margin: 40px auto 80px;
-        padding: 70px 28px;
+        position: relative;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 120px 20px;
         text-align: center;
-        border-radius: 14px;
+        overflow: hidden;
         background:
-          radial-gradient(circle at 50% 0%, rgba(255, 243, 38, 0.18), transparent 52%),
-          #141612;
-        border: 1px solid rgba(255, 243, 38, 0.18);
+          linear-gradient(180deg, rgba(7, 8, 7, 0.72) 0%, rgba(7, 8, 7, 0.8) 100%),
+          url("/images/apex-auto-detailing/hero-interior.jpg") center / cover no-repeat;
+      }
+
+      .booking-cta h2,
+      .booking-cta p,
+      .booking-cta .pill-button {
+        position: relative;
+        z-index: 1;
       }
 
       .booking-cta h2 {
