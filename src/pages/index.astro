@@ -299,10 +299,12 @@ const posts = [
         </div>
       </section>
 
-      <section class="booking-cta wow animate__animated animate__fadeInUp" id="booking">
-        <h2>Your car's best look is just one detail away</h2>
-        <p>Book your detailing today and get <strong>30% cut off</strong></p>
-        <a class="pill-button" href="#contact">Booking Now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <section class="booking-cta" id="booking">
+        <div class="booking-cta-inner wow animate__animated animate__fadeInUp">
+          <h2>Your car's best look is just one detail away</h2>
+          <p>Book your detailing today and get <strong>30% cut off</strong></p>
+          <a class="pill-button" href="#contact">Booking Now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
       </section>
 
       <section class="faq grid-section" id="faq">
@@ -1430,10 +1432,15 @@ const posts = [
           linear-gradient(180deg, rgba(7, 8, 7, 0.72) 0%, rgba(7, 8, 7, 0.8) 100%),
           url("/images/apex-auto-detailing/hero-interior.jpg") center / cover no-repeat;
         /* Parallax: background stays anchored to the viewport while the section
-           scrolls over it, matching the source CTA (background-attachment: fixed). */
+           scrolls over it, matching the source CTA (background-attachment: fixed).
+           The entrance animation must NOT live on this element: a transform on the
+           background-bearing element (or any ancestor) creates a containing block
+           that silently demotes background-attachment:fixed to scroll, killing the
+           parallax. The wow/animate__ classes are on .booking-cta-inner instead. */
         background-attachment: fixed;
       }
 
+      .booking-cta-inner,
       .booking-cta h2,
       .booking-cta p,
       .booking-cta .pill-button {
