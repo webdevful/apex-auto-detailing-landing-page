@@ -1,11 +1,12 @@
 {
   "file": "public/videos/reviews-bg.mp4",
-  "provider": "Pixabay",
-  "photo_video": "car headlight wash/detailing",
-  "pixabay_id": 2030,
-  "author": "VariousPhotography",
-  "url": "https://pixabay.com/videos/id-2030/",
-  "width": 960,
-  "height": 540,
-  "note": "Replaced bokeh clip with a darker automotive car-wash/detailing clip to match source background aesthetic."
+  "provider": "Mixkit",
+  "photo_video": "Person buffing/polishing a dark car body panel with a rotary polisher (car detailing)",
+  "mixkit_id": 47829,
+  "source_url": "https://mixkit.co/free-stock-video/",
+  "download_url": "https://assets.mixkit.co/videos/47829/47829-720.mp4",
+  "license": "Mixkit Stock Video Free License - free for commercial use, no attribution required",
+  "width": 1280,
+  "height": 720,
+  "note": "Replaced the static, low-res (960x540) headlight macro (Pixabay id 2030) that read as a still photo. New clip is a dark automotive detailing scene with clear real motion (frame-diff 5.37 vs 0.84), re-encoded H.264 yuv420p +faststart, audio stripped (muted background)."
 }
