@@ -23,3 +23,6 @@ Asset shape contract terms: source format, alpha, transparency, aspect ratio, cs
 ## Fidelity-return repair (2026-06-28)
 - public/videos/reviews-bg.mp4 — Pixabay licensed car-detailing background video (see reviews-bg.attribution.json); replaces source videos/video-background.mp4 in the reviews section (source video is source-port evidence only).
 - public/images/apex-auto-detailing/avatar-4..6.jpg — Unsplash licensed portraits for testimonials 4-6 (6 total to match source).
+
+## Services section repair (2026-06-28)
+- public/images/apex-auto-detailing/service-car.png — Pixabay licensed transparent yellow car cutout (id 42552, "yellow car, cut out"); baked white halo removed (semi-transparent bright pixels). Replaces the rectangular Mustang photo in the services section center; preserves the source's transparent floating-car visual family.

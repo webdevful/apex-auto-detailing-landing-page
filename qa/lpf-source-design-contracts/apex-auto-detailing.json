@@ -111,6 +111,15 @@
       "rendered height": "review/CTA band",
       "section context": "reviews and background CTA",
       "content relevance": "automotive detailing interior atmosphere"
+    },
+    {
+      "selector": ".service-stage .car-figure img",
+      "requirement": "transparent floating car cutout (not a rectangular photo in a box)",
+      "requiredFile": "public/images/apex-auto-detailing/service-car.png",
+      "mustPreserveTransparency": true,
+      "forbidRawPhotoReplacement": true,
+      "sourceRole": "source services-section transparent car render",
+      "replacementProvider": "Pixabay licensed transparent car cutout (id 42552)"
     }
   ],
   "imageChecks": [

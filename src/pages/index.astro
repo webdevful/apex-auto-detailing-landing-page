@@ -160,29 +160,19 @@ const posts = [
           <p>Restore, protect, and enhance your vehicle with service options matched to every level of care.</p>
         </div>
         <div class="service-stage">
-          <div class="service-grid left">
-            {services.slice(0, 2).map(([icon, title, copy], i) => (
-              <article class="service-card wow animate__animated animate__fadeInLeft" data-wow-delay={`${0.15 * (i + 1)}s`}>
-                <span class="service-icon" aria-hidden="true"><i class={`fa-solid ${icon}`}></i></span>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-                <a href="#booking">Read More <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
-              </article>
-            ))}
-          </div>
           <figure class="car-figure wow animate__animated animate__zoomIn">
-            <img src={`${mediaBase}/yellow-car.jpg`} alt="Yellow detailed vehicle in studio lighting" />
+            <img src={`${mediaBase}/service-car.png`} alt="Detailed yellow performance car" />
           </figure>
-          <div class="service-grid right">
-            {services.slice(2).map(([icon, title, copy], i) => (
-              <article class="service-card wow animate__animated animate__fadeInRight" data-wow-delay={`${0.15 * (i + 1)}s`}>
-                <span class="service-icon" aria-hidden="true"><i class={`fa-solid ${icon}`}></i></span>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-                <a href="#booking">Read More <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
-              </article>
-            ))}
-          </div>
+          {services.map(([icon, title, copy], i) => (
+            <article class={`service-card pos-${i + 1} wow animate__animated ${i < 2 ? "animate__fadeInLeft" : "animate__fadeInRight"}`} data-wow-delay={`${0.15 * (i + 1)}s`}>
+              <a class="service-arrow" href="#booking" aria-label={`More about ${title}`}>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+              <a class="service-readmore" href="#booking">Read More</a>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -952,28 +942,45 @@ const posts = [
         padding: 44px 0 90px;
       }
 
+      /* Services: transparent floating car with 4 staggered cards arranged around it. */
       .service-stage {
-        display: grid;
-        grid-template-columns: 1fr 1.4fr 1fr;
-        align-items: center;
-        gap: 24px;
+        position: relative;
+        min-height: 660px;
       }
 
-      .service-grid {
-        display: grid;
-        gap: 24px;
+      .car-figure {
+        position: absolute;
+        margin: 0;
+        top: 46%;
+        left: 50%;
+        width: 50%;
+        max-width: 660px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.6));
       }
 
-      .service-grid.right {
-        margin-top: 70px;
+      .car-figure img {
+        width: 100%;
+        height: auto;
       }
 
       .service-card {
-        position: relative;
-        min-height: 230px;
-        padding: 34px 24px 24px;
+        position: absolute;
+        z-index: 2;
+        width: 300px;
+        min-height: 210px;
+        padding: 42px 26px 26px;
+        background: #181a18;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 14px;
         transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
       }
+
+      .service-card.pos-1 { left: 1%; top: 16%; }   /* Exterior — left, high */
+      .service-card.pos-2 { left: 24%; top: 58%; }  /* Interior — center-left, low */
+      .service-card.pos-3 { right: 24%; top: 58%; } /* Paint Correction — center-right, low */
+      .service-card.pos-4 { right: 1%; top: 16%; }  /* Ceramic — right, high */
 
       .service-card:hover,
       .service-card:focus-within {
@@ -982,50 +989,40 @@ const posts = [
         background: #1c1f1c;
       }
 
-      .service-icon {
+      .service-arrow {
+        position: absolute;
+        top: -26px;
+        left: 26px;
         width: 52px;
         height: 52px;
-        margin-bottom: 14px;
+        display: grid;
+        place-items: center;
         border-radius: 50%;
         background: #fff326;
         color: #0e0f0c;
-        font-size: 1.25rem;
+        font-size: 1.15rem;
+        box-shadow: 0 10px 24px rgba(255, 243, 38, 0.28);
         transition: transform 220ms ease;
       }
 
-      .service-card:hover .service-icon {
-        transform: rotate(-8deg) scale(1.08);
+      .service-card:hover .service-arrow {
+        transform: translateX(4px) scale(1.06);
       }
 
-      .service-card a {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: 14px;
+      .service-card h3 {
+        margin: 6px 0 10px;
+      }
+
+      .service-readmore {
+        display: inline-block;
+        margin-top: 16px;
         font-weight: 800;
         color: #ffffff;
         font-size: 0.9rem;
       }
 
-      .service-card a:hover {
+      .service-readmore:hover {
         color: #fff326;
-      }
-
-      .car-figure {
-        margin: 0;
-        min-height: 380px;
-        display: grid;
-        place-items: center;
-        border-radius: 10px;
-        background:
-          radial-gradient(circle at 50% 60%, rgba(255, 243, 38, 0.2), transparent 42%),
-          linear-gradient(180deg, #10110f, #090a09);
-      }
-
-      .car-figure img {
-        width: 100%;
-        border-radius: 8px;
-        mix-blend-mode: screen;
       }
 
       .why {
@@ -1576,7 +1573,6 @@ const posts = [
         }
 
         .feature-band,
-        .service-stage,
         .why,
         .review-grid,
         .pricing-grid,
@@ -1590,7 +1586,40 @@ const posts = [
           margin-top: -44px;
         }
 
-        .service-grid.right,
+        /* Services: collapse the floating-car arc into a stacked layout. */
+        .service-stage {
+          min-height: 0;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 40px 22px;
+          padding-top: 40px;
+        }
+
+        .car-figure {
+          position: static;
+          transform: none;
+          width: 100%;
+          max-width: 420px;
+          margin: 0 auto 8px;
+          grid-column: 1 / -1;
+          order: -1;
+          filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.6));
+        }
+
+        .service-card {
+          position: static;
+          width: auto;
+        }
+
+        .service-card.pos-1,
+        .service-card.pos-2,
+        .service-card.pos-3,
+        .service-card.pos-4 {
+          left: auto;
+          right: auto;
+          top: auto;
+        }
+
         .pricing-grid article.featured {
           margin-top: 0;
           transform: none;
