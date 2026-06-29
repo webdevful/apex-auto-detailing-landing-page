@@ -168,9 +168,11 @@ const posts = [
               <a class="service-arrow" href="#booking" aria-label={`More about ${title}`}>
                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
               </a>
-              <h3>{title}</h3>
-              <p>{copy}</p>
-              <a class="service-readmore" href="#booking">Read More</a>
+              <div class="service-card-body">
+                <h3>{title}</h3>
+                <p>{copy}</p>
+                <a class="service-readmore" href="#booking">Read More</a>
+              </div>
             </article>
           ))}
         </div>
@@ -969,12 +971,22 @@ const posts = [
         position: absolute;
         z-index: 2;
         width: 300px;
+        transition: transform 200ms ease;
+      }
+
+      .service-card-body {
         min-height: 210px;
-        padding: 42px 26px 26px;
+        padding: 56px 26px 26px;
         background: #181a18;
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        border-radius: 14px;
-        transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+        border-radius: 18px;
+        transition: background 200ms ease;
+        /* Concave corner notch: scoop a circle from the top-left so the arrow
+           circle nests into the card edge (matches source). */
+        --notch-x: 26px;
+        --notch-y: 26px;
+        --notch-r: 34px;
+        -webkit-mask: radial-gradient(circle var(--notch-r) at var(--notch-x) var(--notch-y), transparent calc(var(--notch-r) - 0.5px), #000 var(--notch-r));
+        mask: radial-gradient(circle var(--notch-r) at var(--notch-x) var(--notch-y), transparent calc(var(--notch-r) - 0.5px), #000 var(--notch-r));
       }
 
       .service-card.pos-1 { left: 1%; top: 16%; }   /* Exterior — left, high */
@@ -985,14 +997,17 @@ const posts = [
       .service-card:hover,
       .service-card:focus-within {
         transform: translateY(-6px);
-        border-color: rgba(255, 243, 38, 0.56);
+      }
+
+      .service-card:hover .service-card-body,
+      .service-card:focus-within .service-card-body {
         background: #1c1f1c;
       }
 
       .service-arrow {
         position: absolute;
-        top: -26px;
-        left: 26px;
+        top: 0;
+        left: 0;
         width: 52px;
         height: 52px;
         display: grid;
@@ -1001,8 +1016,8 @@ const posts = [
         background: #fff326;
         color: #0e0f0c;
         font-size: 1.15rem;
-        box-shadow: 0 10px 24px rgba(255, 243, 38, 0.28);
         transition: transform 220ms ease;
+        z-index: 3;
       }
 
       .service-card:hover .service-arrow {
