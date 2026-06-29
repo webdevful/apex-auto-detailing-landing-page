@@ -1429,6 +1429,9 @@ const posts = [
         background:
           linear-gradient(180deg, rgba(7, 8, 7, 0.72) 0%, rgba(7, 8, 7, 0.8) 100%),
           url("/images/apex-auto-detailing/hero-interior.jpg") center / cover no-repeat;
+        /* Parallax: background stays anchored to the viewport while the section
+           scrolls over it, matching the source CTA (background-attachment: fixed). */
+        background-attachment: fixed;
       }
 
       .booking-cta h2,
@@ -1743,6 +1746,11 @@ const posts = [
           background-attachment: scroll;
         }
 
+        /* fixed attachment is unreliable on mobile; fall back to scroll. */
+        .booking-cta {
+          background-attachment: scroll;
+        }
+
         .why {
           padding: 32px;
         }
@@ -1811,6 +1819,9 @@ const posts = [
         }
         .hero-bg {
           animation: none;
+        }
+        .booking-cta {
+          background-attachment: scroll;
         }
       }
     </style>
