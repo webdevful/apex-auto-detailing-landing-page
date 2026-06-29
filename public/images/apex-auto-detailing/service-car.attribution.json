@@ -1,0 +1,10 @@
+{
+  "file": "public/images/apex-auto-detailing/service-car.png",
+  "provider": "Pexels",
+  "photo": "Yellow Mercedes-AMG GT",
+  "pexels_id": 15864702,
+  "photographer": "Dextar Vision",
+  "url": "https://www.pexels.com/photo/yellow-mercedes-gt-15864702/",
+  "processing": "background removed via PIL+scipy border-connected flood fill (light studio bg keyed out)",
+  "note": "Photorealistic transparent car replacing the prior vector cutout, matching source render quality."
+}

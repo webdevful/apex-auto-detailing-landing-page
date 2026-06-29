@@ -26,3 +26,6 @@ Asset shape contract terms: source format, alpha, transparency, aspect ratio, cs
 
 ## Services section repair (2026-06-28)
 - public/images/apex-auto-detailing/service-car.png — Pixabay licensed transparent yellow car cutout (id 42552, "yellow car, cut out"); baked white halo removed (semi-transparent bright pixels). Replaces the rectangular Mustang photo in the services section center; preserves the source's transparent floating-car visual family.
+
+## Services car photorealistic upgrade (2026-06-28)
+- public/images/apex-auto-detailing/service-car.png — replaced the Pixabay vector with a photorealistic Pexels yellow Mercedes-AMG (id 15864702, by Dextar Vision), side profile, background removed via PIL+scipy border-connected flood fill. Matches the source's photorealistic render quality.
