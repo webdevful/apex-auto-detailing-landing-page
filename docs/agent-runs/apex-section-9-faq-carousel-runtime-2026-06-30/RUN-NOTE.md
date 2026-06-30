@@ -43,6 +43,14 @@ The owner-provided screenshots on Desktop could not be read from this Codex sess
 - Local FAQ runtime screenshot: `/Volumes/WDF-NAS-01/04-Projects/Internal-Projects/Codebases/webdevful-astro-main/qa/lpf-rendered-output/apex-auto-detailing-section-9-faq-carousel-local/section-9-faq-carousel-runtime.png`
 - Local FAQ runtime proof JSON: `/Volumes/WDF-NAS-01/04-Projects/Internal-Projects/Codebases/webdevful-astro-main/qa/lpf-rendered-output/apex-auto-detailing-section-9-faq-carousel-local/faq-runtime-proof.json`
 - Local visual-fidelity rendered output: `/Volumes/WDF-NAS-01/04-Projects/Internal-Projects/Codebases/webdevful-astro-main/qa/lpf-rendered-output/apex-auto-detailing-section-9-faq-carousel-visual-fidelity-local`
+- Product commit: `43d0488` (`Repair Apex FAQ tab accordion runtime`)
+- Cloudflare Pages deployment: `https://334a310d.apex-auto-detailing-landing-page.pages.dev`
+- Canonical live demo: `https://apex-auto-detailing-landing-page.pages.dev/`
+- Public rendered-output: `/Volumes/WDF-NAS-01/04-Projects/Internal-Projects/Codebases/webdevful-astro-main/qa/lpf-rendered-output/apex-auto-detailing-section-9-faq-carousel-public-final`
+- Public FAQ runtime screenshot: `/Volumes/WDF-NAS-01/04-Projects/Internal-Projects/Codebases/webdevful-astro-main/qa/lpf-rendered-output/apex-auto-detailing-section-9-faq-carousel-public-final/section-9-faq-carousel-runtime-public.png`
+- Public FAQ runtime proof JSON: `/Volumes/WDF-NAS-01/04-Projects/Internal-Projects/Codebases/webdevful-astro-main/qa/lpf-rendered-output/apex-auto-detailing-section-9-faq-carousel-public-final/faq-runtime-proof-public.json`
+- Public visual-fidelity rendered output: `/Volumes/WDF-NAS-01/04-Projects/Internal-Projects/Codebases/webdevful-astro-main/qa/lpf-rendered-output/apex-auto-detailing-section-9-faq-carousel-visual-fidelity-public`
+- Public storefront funnel sync: passed for `apex-auto-detailing` against `https://apex-auto-detailing-landing-page.pages.dev/`
 
 ## Learning Loop
 
