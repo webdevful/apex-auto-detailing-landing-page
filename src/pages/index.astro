@@ -182,7 +182,7 @@ const posts = [
         <div class="why-aside wow animate__animated animate__fadeInLeft">
           <p class="why-label">Why Choose Us?</p>
           <div class="why-score">
-            <strong><span class="counter" data-count="90">0</span>%</strong>
+            <strong><span class="counter" data-count="90">90</span>%</strong>
             <p><strong>Many customers trust us</strong> for repeat detailing and scheduled maintenance care.</p>
           </div>
         </div>
@@ -405,8 +405,18 @@ const posts = [
       // Animated counter (the "90%") via IntersectionObserver.
       const startCounters = () => {
         const counters = document.querySelectorAll<HTMLElement>(".counter");
+        // The final value is rendered server-side (e.g. "90") so it is correct
+        // for no-JS, first paint, short viewports, and full-page captures. The
+        // count-up is enhancement-only: reset to 0 then animate up on intersect.
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
         const run = (el: HTMLElement) => {
           const target = Number(el.dataset.count || "0");
+          if (reduceMotion) {
+            el.textContent = String(target);
+            return;
+          }
           const duration = 1500;
           const start = performance.now();
           const tick = (now: number) => {
