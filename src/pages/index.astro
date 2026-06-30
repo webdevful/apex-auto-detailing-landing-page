@@ -45,12 +45,43 @@ const plans = [
   ["Ultimate", "$999.99", "Estimated time: 4-7 hours", ["Everything in Premium", "Paint correction", "Ceramic coating", "Leather conditioning"], "Maximum protection and showroom-level restoration."],
 ];
 
-const faqs = [
-  ["What is car detailing?", "Car detailing is a careful cleaning, restoration, and protection process for the interior and exterior of your vehicle."],
-  ["How often should I get my car detailed?", "Most vehicles benefit from a maintenance detail every 3 to 6 months, depending on use, parking, and weather."],
-  ["Do you use eco-friendly products?", "Yes. Apex Auto Detailing uses water-smart methods and biodegradable products whenever the vehicle surface allows it."],
-  ["How long does a detailing service take?", "A basic detail takes about 1.5 to 2 hours, while a full ultimate detail can take 4 to 7 hours depending on the vehicle."],
-  ["Do you offer mobile detailing services?", "Yes. We bring the tools and products to your home or workplace so the service fits around your day."],
+const faqCategories = [
+  {
+    id: "general",
+    prefix: "gen",
+    label: "General Questions",
+    items: [
+      ["What is car detailing?", "Car detailing is a deep cleaning process that restores, protects, and enhances both the interior and exterior of your vehicle, going beyond a regular car wash."],
+      ["How often should I get my car detailed?", "It depends on your driving habits and environment, but we recommend a full detail every 3-6 months to maintain your car's condition."],
+      ["How long does a car detailing service take?", "The time varies depending on the package you choose. A basic detailing takes about 1.5-2 hours, while a full detailing can take 4-6 hours or more."],
+      ["Do you use eco-friendly products?", "Yes. We prioritize high-quality, biodegradable, and eco-friendly products that are safe for both your car and the environment."],
+      ["Do I need to make an appointment for a detailing service?", "Yes, we recommend booking an appointment to ensure availability and the best service. However, we do accept walk-ins based on availability."],
+    ],
+  },
+  {
+    id: "services",
+    prefix: "ser",
+    label: "Services & Process Questions",
+    items: [
+      ["What's the difference between a car wash and car detailing?", "A car wash is a quick cleaning of the exterior, while detailing is a deep cleaning, polishing, and protecting of both the interior and exterior."],
+      ["Do you offer mobile detailing services?", "Yes, we provide mobile detailing for added convenience. We come to your home or workplace with all the necessary equipment."],
+      ["Will detailing remove scratches from my car?", "Minor scratches and swirl marks can be removed with our paint correction service, but deep scratches may require additional repair work."],
+      ["Does car detailing include engine cleaning?", "Yes, we offer engine bay cleaning as part of our premium and ultimate detailing packages to remove dirt and grease buildup."],
+      ["Can you remove stains and odors from my car's interior?", "Absolutely. We use professional-grade steam cleaning and deodorizing treatments to remove tough stains and odors from your seats, carpets, and upholstery."],
+    ],
+  },
+  {
+    id: "pricing",
+    prefix: "pri",
+    label: "Pricing & Payment Questions",
+    items: [
+      ["How much does car detailing cost?", "Our pricing depends on the level of service you choose. We offer Basic, Premium, and Ultimate detailing packages to fit different needs and budgets."],
+      ["Do you offer any discounts or membership plans?", "Yes. We offer loyalty discounts, package deals, and membership plans for regular customers. Contact us for more details."],
+      ["What payment methods do you accept?", "We accept cash, credit/debit cards, mobile payments, and online transfers for your convenience."],
+      ["Do you offer a satisfaction guarantee?", "Yes, we stand by our work. If you're not satisfied, let us know within 24 hours, and we'll make it right."],
+      ["Are there any additional fees for large or excessively dirty vehicles?", "Some larger vehicles or cars with extreme dirt/stains may require extra time and effort, which could result in an additional fee. We'll always inform you upfront."],
+    ],
+  },
 ];
 
 const posts = [
@@ -312,23 +343,67 @@ const posts = [
         </div>
       </section>
 
-      <section class="faq grid-section" id="faq">
-        <aside class="wow animate__animated animate__fadeInLeft">
-          <p class="eyebrow">FAQ</p>
-          <p class="faq-lead">Still Have Questions? Find Your Answers Here!</p>
-          <a class="faq-contact" href="#contact">or Contact Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </aside>
-        <div class="wow animate__animated animate__fadeInRight">
-          <h2>Everything You Need to Know About Our <strong>Detailing Services</strong></h2>
-          <div class="faq-list" id="faq-accordion">
-            {faqs.map(([question, answer], i) => (
-              <div class="faq-item">
-                <button class="faq-trigger" type="button" aria-expanded={i === 0 ? "true" : "false"} aria-controls={`faq-panel-${i}`}>
-                  <span>{question}</span>
-                  <i class="fa-solid fa-plus faq-mark" aria-hidden="true"></i>
-                </button>
-                <div class="faq-panel" id={`faq-panel-${i}`} hidden={i !== 0}>
-                  <p>{answer}</p>
+      <section class="faq section-shell" id="faq">
+        <div class="faq-heading">
+          <aside class="wow animate__animated animate__fadeInLeft">
+            <p class="eyebrow">FAQ</p>
+            <p class="faq-lead">Still Have Questions? Find Your Answers Here! <a href="#contact">or Contact Us</a></p>
+          </aside>
+          <div class="wow animate__animated animate__fadeInRight">
+            <h2>Everything You Need to Know About Our <strong>Detailing Services</strong></h2>
+          </div>
+        </div>
+        <div class="faq-runtime">
+          <nav class="faq-tabs nav flex-column nav-pills wow animate__animated animate__fadeInLeft" id="faq-tabs" role="tablist" aria-orientation="vertical">
+            {faqCategories.map((category, i) => (
+              <button
+                class={`nav-link ${i === 0 ? "active" : ""}`}
+                id={`faq-${category.id}-tab`}
+                data-bs-toggle="pill"
+                data-bs-target={`#faq-${category.id}`}
+                type="button"
+                role="tab"
+                aria-controls={`faq-${category.id}`}
+                aria-selected={i === 0 ? "true" : "false"}
+              >
+                {category.label}
+              </button>
+            ))}
+          </nav>
+          <div class="faq-content tab-content wow animate__animated animate__fadeInRight" id="faq-tab-content">
+            {faqCategories.map((category, categoryIndex) => (
+              <div class={`tab-pane fade ${categoryIndex === 0 ? "show active" : ""}`} id={`faq-${category.id}`} role="tabpanel" aria-labelledby={`faq-${category.id}-tab`} tabindex="0">
+                <div class="accordion" id={`accordion-${category.id}`}>
+                  {category.items.map(([question, answer], itemIndex) => {
+                    const collapseId = `${category.prefix}-collapse-${itemIndex + 1}`;
+                    const headingId = `${category.prefix}-heading-${itemIndex + 1}`;
+                    return (
+                      <div class="accordion-item faq-item">
+                        <h5 class="accordion-header" id={headingId}>
+                          <button
+                            class={`accordion-button ${itemIndex === 0 ? "" : "collapsed"}`}
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target={`#${collapseId}`}
+                            aria-expanded={itemIndex === 0 ? "true" : "false"}
+                            aria-controls={collapseId}
+                          >
+                            {question}
+                          </button>
+                        </h5>
+                        <div
+                          id={collapseId}
+                          class={`accordion-collapse collapse ${itemIndex === 0 ? "show" : ""}`}
+                          aria-labelledby={headingId}
+                          data-bs-parent={`#accordion-${category.id}`}
+                        >
+                          <div class="accordion-body">
+                            <p>{answer}</p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
@@ -399,6 +474,7 @@ const posts = [
     </footer>
 
     <script>
+      import { Collapse, Tab } from "bootstrap";
       import { WOW } from "wow.js";
 
       const reveal = () =>
@@ -449,23 +525,13 @@ const posts = [
         counters.forEach((c) => io.observe(c));
       };
 
-      // Accessible FAQ accordion (single-open), Bootstrap-style behavior.
+      // FAQ: source Bootstrap vertical pills plus right-side accordions.
       const startFaq = () => {
-        const triggers = document.querySelectorAll<HTMLButtonElement>(".faq-trigger");
-        triggers.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const panel = document.getElementById(btn.getAttribute("aria-controls") || "");
-            const isOpen = btn.getAttribute("aria-expanded") === "true";
-            triggers.forEach((other) => {
-              other.setAttribute("aria-expanded", "false");
-              const p = document.getElementById(other.getAttribute("aria-controls") || "");
-              if (p) p.hidden = true;
-            });
-            if (!isOpen && panel) {
-              btn.setAttribute("aria-expanded", "true");
-              panel.hidden = false;
-            }
-          });
+        document.querySelectorAll<HTMLElement>('#faq [data-bs-toggle="pill"]').forEach((el) => {
+          Tab.getOrCreateInstance(el);
+        });
+        document.querySelectorAll<HTMLElement>("#faq .accordion-collapse").forEach((el) => {
+          Collapse.getOrCreateInstance(el, { toggle: false });
         });
       };
 
@@ -1524,29 +1590,99 @@ const posts = [
         color: #fff326;
       }
 
-      .faq aside {
-        padding-top: 10px;
+      .faq {
+        padding: 96px 0;
+      }
+
+      .faq-heading {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.48fr);
+        gap: 52px;
+        align-items: end;
+        margin-bottom: 34px;
+      }
+
+      .faq-heading aside {
+        order: 2;
+        width: min(100%, 360px);
+        justify-self: end;
+        text-align: right;
+      }
+
+      .faq-heading > div {
+        order: 1;
       }
 
       .faq-lead {
+        margin: 0;
         color: #ffffff;
         font-weight: 700;
         font-size: 18px;
+        line-height: 1.55;
       }
 
-      .faq-contact {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
+      .faq-lead a {
         color: #fff326;
         font-family: "Libre Franklin", "Public Sans", Inter, Arial, sans-serif;
-        font-size: 18px;
-        font-weight: 600;
+        font-weight: 700;
       }
 
-      .faq-list {
+      .faq-runtime {
         display: grid;
-        gap: 0;
+        grid-template-columns: minmax(240px, 0.5fr) minmax(0, 1fr);
+        gap: 52px;
+        align-items: start;
+      }
+
+      .faq-tabs {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .faq-tabs .nav-link {
+        width: 100%;
+        min-height: 60px;
+        padding: 15px 22px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        background: #151713;
+        color: #ffffff;
+        cursor: pointer;
+        font-family: "Libre Franklin", "Public Sans", Inter, Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.25;
+        text-align: left;
+        transition: background 220ms ease, border-color 220ms ease, color 220ms ease, transform 220ms ease;
+      }
+
+      .faq-tabs .nav-link:hover,
+      .faq-tabs .nav-link.active {
+        border-color: rgba(255, 243, 38, 0.72);
+        background: #fff326;
+        color: #141414;
+        transform: translateX(8px);
+      }
+
+      .faq-content {
+        min-width: 0;
+      }
+
+      .tab-pane {
+        display: none;
+      }
+
+      .tab-pane.active {
+        display: block;
+      }
+
+      .fade:not(.show) {
+        opacity: 0;
+      }
+
+      .fade {
+        transition: opacity 180ms ease;
       }
 
       .faq-item {
@@ -1554,47 +1690,63 @@ const posts = [
         border-bottom: 1px solid rgba(255, 255, 255, 0.18);
         border-radius: 0;
         background: transparent;
-        overflow: hidden;
-        transition: border-color 200ms ease, background 200ms ease;
+        color: #ffffff;
       }
 
-      .faq-item:has(.faq-trigger[aria-expanded="true"]) {
-        border-color: rgba(255, 243, 38, 0.55);
+      .accordion-header {
+        margin: 0;
       }
 
-      .faq-trigger {
+      .accordion-button {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
-        padding: 18px 0;
-        background: transparent;
+        gap: 18px;
+        padding: 19px 0;
         border: 0;
-        cursor: pointer;
-        text-align: left;
+        background: transparent;
         color: #ffffff;
-        font-weight: 600;
-        font-size: 22px;
+        cursor: pointer;
         font-family: "Libre Franklin", "Public Sans", Inter, Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.32;
+        text-align: left;
       }
 
-      .faq-mark {
-        flex: none;
+      .accordion-button::after {
+        content: "+";
+        flex: 0 0 auto;
+        display: grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
         color: #fff326;
-        transition: transform 240ms ease;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1;
+        transition: transform 220ms ease;
       }
 
-      .faq-trigger[aria-expanded="true"] .faq-mark {
+      .accordion-button:not(.collapsed)::after {
         transform: rotate(45deg);
       }
 
-      .faq-panel {
-        padding: 0 0 20px;
+      .accordion-collapse {
+        display: none;
+      }
+
+      .accordion-collapse.show {
+        display: block;
+      }
+
+      .accordion-body {
+        padding: 0 0 21px;
         animation: faqOpen 260ms ease;
       }
 
-      .faq-panel p {
+      .accordion-body p {
         margin: 0;
       }
 
@@ -1908,6 +2060,43 @@ const posts = [
           grid-template-columns: 1fr;
         }
 
+        .faq-heading,
+        .faq-runtime {
+          grid-template-columns: 1fr;
+          gap: 26px;
+        }
+
+        .faq-heading aside {
+          order: 1;
+          text-align: left;
+        }
+
+        .faq-heading > div {
+          order: 2;
+        }
+
+        .faq-tabs {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .faq-tabs .nav-link {
+          min-height: 68px;
+          padding: 13px 15px;
+          font-size: 16px;
+          text-align: center;
+        }
+
+        .faq-tabs .nav-link:hover,
+        .faq-tabs .nav-link.active {
+          transform: translateY(-3px);
+        }
+
+        .accordion-button {
+          font-size: 20px;
+        }
+
         .feature-band {
           margin-top: -44px;
         }
@@ -2019,6 +2208,24 @@ const posts = [
         .blog-grid p,
         .pricing-grid li {
           font-size: 14px;
+        }
+
+        .faq {
+          padding: 74px 0;
+        }
+
+        .faq-tabs {
+          grid-template-columns: 1fr;
+        }
+
+        .faq-tabs .nav-link {
+          min-height: 56px;
+          text-align: left;
+        }
+
+        .accordion-button {
+          font-size: 18px;
+          gap: 12px;
         }
 
         .service-stage {

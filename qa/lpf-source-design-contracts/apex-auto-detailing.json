@@ -26,6 +26,10 @@
       "contains": "Source: AxeMobile by Widagdos via Envato Elements."
     },
     {
+      "path": "docs/SOURCE-DESIGN-BRIEF.md",
+      "contains": "source FAQ must stay as a Bootstrap-style runtime section"
+    },
+    {
       "path": "src/pages/index.astro",
       "contains": "Bring Back the New Car Feel with Our Professional Detailing"
     },
@@ -92,6 +96,18 @@
     {
       "path": "src/pages/index.astro",
       "contains": ".site-footer .footer-nav a.active"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "data-bs-toggle=\"pill\""
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "data-bs-toggle=\"collapse\""
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "import { Collapse, Tab } from \"bootstrap\""
     }
   ],
   "requiredFiles": [
@@ -299,6 +315,35 @@
         ".btn-cta-secondary padding: 13px 30px font-size: 18px"
       ],
       "forbidden": "14px desktop nav text, invented active underline rules, oversized WLFS logo crowding nav, small 46px appointment pill, transparent/glass header treatment, or missing source dropdown proportions"
+    }
+  ],
+  "faqRuntimeDesignChecks": [
+    {
+      "label": "Source FAQ vertical pill tabs and right-side accordions",
+      "requiredSelectors": [
+        "#faq-tabs",
+        "#faq-tabs [data-bs-toggle=\"pill\"]",
+        "#faq-tab-content",
+        ".tab-pane",
+        ".accordion",
+        ".accordion-button",
+        ".accordion-collapse"
+      ],
+      "requiredCategoryLabels": [
+        "General Questions",
+        "Services & Process Questions",
+        "Pricing & Payment Questions"
+      ],
+      "runtimeLibrary": "Bootstrap Tab and Collapse modules imported from the existing product dependency stack",
+      "desktopTopology": "three left-side vertical pill buttons in a narrow column, right-side tab content in a wider column, with five accordion dropdowns per active category",
+      "interactionAcceptance": "Clicking each left category changes the active right-side pane and `aria-selected`; clicking an accordion button inside the pane toggles the collapse body using Bootstrap collapse classes.",
+      "sourceRefs": [
+        "desktop/page.html `#faq-tabs` nav flex-column nav-pills",
+        "desktop/page.html `data-bs-toggle=\"pill\"` category buttons",
+        "desktop/page.html `.tab-content` right content area",
+        "desktop/page.html `.accordion` groups with `data-bs-toggle=\"collapse\"`"
+      ],
+      "forbidden": "flattening the source FAQ into one `faq-list`, replacing the three category tabs with static headings, using only custom `.faq-trigger` buttons, removing right-side tab panes, or passing QA without browser click proof for tabs and accordions"
     }
   ],
   "footerDesignChecks": [
