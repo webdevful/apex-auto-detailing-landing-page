@@ -17,7 +17,7 @@
       "blog",
       "footer"
     ],
-    "typography": "Source CSS records h1 72px desktop, h2 48px desktop, p/a 18px desktop with responsive reductions.",
+    "typography": "Source CSS records Public Sans body, Libre Franklin heading/button/nav/accordion modules, desktop h1 72px, h2 48px, h3 36px, h4 25px, h5 22px, h6 20px, p/a 18px, and responsive reductions.",
     "visualLanguage": "Black automotive canvas, acid-yellow accents, dark rounded cards, yellow vehicle imagery, pill CTAs, hover card movement."
   },
   "sourceChecks": [
@@ -32,6 +32,22 @@
     {
       "path": "docs/SOURCE-DESIGN-BRIEF.md",
       "contains": "Header structure: source header is a 106px dark band"
+    },
+    {
+      "path": "docs/SOURCE-DESIGN-BRIEF.md",
+      "contains": "Desktop scale is `h1` 72px, `h2` 48px, `h3` 36px, `h4` 25px, `h5` 22px, `h6` 20px, and `p/a` 18px"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "font-size: 48px"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "font-size: 22px"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "font-size: 25px"
     },
     {
       "path": "src/pages/index.astro",
@@ -51,7 +67,7 @@
     },
     {
       "path": "src/pages/index.astro",
-      "contains": "Choose the perfect detailing package for your car"
+      "contains": "Choose the Perfect Detailing Package for Your Car"
     },
     {
       "path": "src/pages/index.astro",
@@ -187,6 +203,47 @@
       "sourceRole": "source videos/video-background.mp4 (source-port evidence only)",
       "replacementProvider": "Pixabay licensed car-detailing clip",
       "forbidden": "flattening the video slot to a static background image"
+    }
+  ],
+  "typographyDesignChecks": [
+    {
+      "label": "Full-page source typography scale",
+      "fontFamilies": {
+        "body": "Public Sans",
+        "headingModules": "Libre Franklin for .heading-equivalent h2/h3/h4, feature titles, service/pricing/blog titles, buttons, nav/dropdowns, and accordion triggers"
+      },
+      "desktopScale": {
+        "h1": "72px",
+        "h2": "48px",
+        "h3": "36px",
+        "h4": "25px",
+        "h5": "22px",
+        "h6": "20px",
+        "p/a": "18px"
+      },
+      "responsiveScale": {
+        "max1199": "h1 64px, h2 40px, h3 32px, h4 22px, p/a 18px",
+        "max991": "h1 56px, h2 36px, h3 28px, p/a 16px",
+        "max768": "h1 48px, h2 32px, h3 24px, h4 20px, h5 18px, h6 16px, p/a 14px"
+      },
+      "requiredTextStructure": [
+        "Comprehensive Car Detailing Services For A Flawless Finish",
+        "Unmatched Quality, Precision, And Care for Your Car",
+        "Customer Experiences That Speak For Themselves",
+        "Choose the Perfect Detailing Package for Your Car",
+        "Your Car's Best Look Is Just One Detail Away",
+        "Everything You Need to Know About Our Detailing Services",
+        "Expert Tips & Insights For Car Enthusiasts"
+      ],
+      "sourceRefs": [
+        "style.css h1/h2/h3/h4/h5/h6/p,a typography block",
+        "style.css .heading font-family: var(--font-2)",
+        "style.css .feature-title 1.25rem Libre Franklin",
+        "style.css .btn-cta-primary/.btn-cta-secondary 18px Libre Franklin",
+        "style.css .accordion .accordion-button 22px Libre Franklin",
+        "responsive rules at max-width 1199.98px, 991.98px, 768.98px"
+      ],
+      "forbidden": "desktop section headings at 43.2px Public Sans, section labels at 12.48px, body/card/blog/pricing text at 14.4px on desktop, CTAs at 14.4px/44px, accordion triggers at 16px Public Sans, or source titles rewritten to casual sentence-case"
     }
   ],
   "headerDesignChecks": [
