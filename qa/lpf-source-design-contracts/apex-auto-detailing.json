@@ -67,6 +67,10 @@
     },
     {
       "path": "src/pages/index.astro",
+      "contains": "min-height: 700px"
+    },
+    {
+      "path": "src/pages/index.astro",
       "contains": "Choose the Perfect Detailing Package for Your Car"
     },
     {
@@ -244,6 +248,20 @@
         "responsive rules at max-width 1199.98px, 991.98px, 768.98px"
       ],
       "forbidden": "desktop section headings at 43.2px Public Sans, section labels at 12.48px, body/card/blog/pricing text at 14.4px on desktop, CTAs at 14.4px/44px, accordion triggers at 16px Public Sans, or source titles rewritten to casual sentence-case"
+    }
+  ],
+  "heroSpacingDesignChecks": [
+    {
+      "label": "Hero CTA to feature-card breathing room",
+      "sourceRefs": [
+        "style.css .hero height: 90vh",
+        "style.css .feature margin-top: -125px",
+        "responsive source rule resets .feature margin-top to 0 on mobile"
+      ],
+      "requiredBehavior": "Preserve the source-like upward overlap of the feature card band while keeping a visible desktop gap between the hero CTA bottom edge and the first feature-card top edge.",
+      "desktopAcceptance": "CTA-to-feature-card gap must read as intentional breathing room, not a near-touching or flush edge.",
+      "responsiveAcceptance": "Tablet and mobile must keep readable separation and must not collapse the CTA into the first feature card.",
+      "forbidden": "desktop .hero .pill-button bottom within a few pixels of .feature-band top, feature cards touching/appearing flush with the CTA, or removing the source-like feature-card overlap entirely"
     }
   ],
   "headerDesignChecks": [
