@@ -30,6 +30,26 @@
       "contains": "Bring Back the New Car Feel with Our Professional Detailing"
     },
     {
+      "path": "docs/SOURCE-DESIGN-BRIEF.md",
+      "contains": "Header structure: source header is a 106px dark band"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "grid-template-columns: minmax(220px, 300px) minmax(0, 1fr) auto"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "font-size: 18px"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "width: 220px"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "min-height: 56px"
+    },
+    {
       "path": "src/pages/index.astro",
       "contains": "Choose the perfect detailing package for your car"
     },
@@ -167,6 +187,43 @@
       "sourceRole": "source videos/video-background.mp4 (source-port evidence only)",
       "replacementProvider": "Pixabay licensed car-detailing clip",
       "forbidden": "flattening the video slot to a static background image"
+    }
+  ],
+  "headerDesignChecks": [
+    {
+      "label": "Source header topology and typography",
+      "requiredSelectors": [
+        ".site-header",
+        ".brand img",
+        "#primary-nav",
+        ".nav-dropdown",
+        ".dropdown-menu",
+        ".outline-pill"
+      ],
+      "requiredNavLabels": [
+        "Homepage",
+        "About Us",
+        "Services",
+        "Pages",
+        "Contact Us"
+      ],
+      "fontFamily": "Libre Franklin for nav and appointment button",
+      "desktopHeaderHeight": "106px target",
+      "desktopNavFontSize": "18px target",
+      "activeLink": "Homepage active state is acid yellow text with no decorative underline",
+      "dropdown": "220px dark rounded menu with 18px Libre Franklin items",
+      "appointmentButton": "dark/secondary outline pill, 18px text, about 226x56px",
+      "logoFootprint": "compact WLFS logo footprint; do not let the logo crowd or push the centered nav",
+      "sourceRefs": [
+        "header.header",
+        ".b-container nav.navbar",
+        ".logo-box max-width: 160px",
+        ".navbar-nav mx-auto my-lg-4 gap-lg-2 gap-xl-4",
+        ".nav-link font-size: 18px font-weight: 600",
+        ".dropdown-menu width: 220px border-radius: 15px",
+        ".btn-cta-secondary padding: 13px 30px font-size: 18px"
+      ],
+      "forbidden": "14px desktop nav text, invented active underline rules, oversized WLFS logo crowding nav, small 46px appointment pill, transparent/glass header treatment, or missing source dropdown proportions"
     }
   ],
   "footerDesignChecks": [
