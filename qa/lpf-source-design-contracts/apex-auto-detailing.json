@@ -32,6 +32,26 @@
     {
       "path": "src/pages/index.astro",
       "contains": "Choose the perfect detailing package for your car"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": ".site-footer .footer-nav"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "align-items: flex-start"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "width: min(100%, 342px)"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": "@media (min-width: 700px) and (max-width: 980px)"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "contains": ".site-footer .footer-nav a.active"
     }
   ],
   "requiredFiles": [
@@ -113,9 +133,14 @@
       "content relevance": "automotive detailing interior atmosphere"
     },
     {
-      "selector": ".service-stage .car-figure img",
+      "label": "Transparent service car foreground",
       "requirement": "transparent floating car cutout (not a rectangular photo in a box)",
+      "sourceRef": "images/Crossover-Sports-Car-Yellow-Simplified.H04.2k.png",
       "requiredFile": "public/images/apex-auto-detailing/service-car.png",
+      "requiredRefs": [
+        "service-car.png",
+        "car-figure"
+      ],
       "mustPreserveTransparency": true,
       "forbidRawPhotoReplacement": true,
       "sourceRole": "source services-section transparent car render",
@@ -142,6 +167,37 @@
       "sourceRole": "source videos/video-background.mp4 (source-port evidence only)",
       "replacementProvider": "Pixabay licensed car-detailing clip",
       "forbidden": "flattening the video slot to a static background image"
+    }
+  ],
+  "footerDesignChecks": [
+    {
+      "label": "Source footer heading hierarchy",
+      "requiredSelectors": [
+        ".site-footer .footer-heading",
+        ".site-footer hr",
+        ".footer-copy"
+      ],
+      "requiredHeadings": [
+        "Navigation",
+        "Visit Our Office",
+        "Contact Info"
+      ],
+      "fontFamily": "Libre Franklin / Public Sans",
+      "desktopHeadingFontSize": "20px target",
+      "mobileHeadingFontSize": "19px target",
+      "underline": "2px horizontal rule below each heading",
+      "layout": "three desktop columns; tablet brand spans full width while navigation and contact sit in two columns; mobile stacks",
+      "alignment": "footer Navigation heading, underline, list, and active Homepage link must share the same left edge",
+      "brandColumn": "logo box above white/bold source copy, followed by full-width 342px outline pill CTA",
+      "activeLink": "Homepage active state remains acid yellow",
+      "sourceRefs": [
+        "footer h5.heading",
+        "footer hr.border-2",
+        "footer .btn-cta-secondary.d-block",
+        "footer .col-12.col-md-6.col-xl-4",
+        "footer copyright row"
+      ],
+      "forbidden": "centered footer navigation headings/lists, button-sized footer CTA, tablet single-column collapse, plain footer headings without underline rules, missing Visit/Contact title separation, or an active Homepage link rendered gray"
     }
   ]
 }

@@ -71,6 +71,9 @@ const posts = [
       name="description"
       content="Apex Auto Detailing is a one-page car detailing landing page for mobile wash, polish, interior, and ceramic coating services."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800;900&family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/apex-auto-detailing/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/logo/apex-auto-detailing/favicon-16x16.png" />
     <link rel="icon" type="image/png" href="/assets/img/logo/apex-auto-detailing/favicon.png" />
@@ -139,7 +142,7 @@ const posts = [
       <section class="about grid-section" id="about">
         <div class="wow animate__animated animate__fadeInLeft">
           <p class="eyebrow">About Us</p>
-          <h2>Premium car detailing that brings out the best in your vehicle.</h2>
+          <h2>Our Commitment to Providing Premium Car Detailing Services That <strong>Bring Out the Best in Your Vehicle, Ensuring a Showroom Shine Every Time</strong></h2>
         </div>
         <div class="copy-stack wow animate__animated animate__fadeInRight">
           <p>
@@ -212,7 +215,7 @@ const posts = [
       <section class="process grid-section">
         <div class="process-copy wow animate__animated animate__fadeInLeft">
           <p class="eyebrow eyebrow-muted">How It Works</p>
-          <h2>Obtain your car's best look in just three easy steps.</h2>
+          <h2>Obtain Your Car's History In Just Three Easy Steps.</h2>
           <a class="pill-button" href="#contact">Let's Get In Touch <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           <div class="steps" id="steps-accordion">
             {steps.map(([title, copy], i) => (
@@ -251,7 +254,7 @@ const posts = [
         <div class="reviews-overlay" aria-hidden="true"></div>
         <div class="section-heading center wow animate__animated animate__fadeInUp">
           <p class="eyebrow">Customer Reviews</p>
-          <h2>Customer experiences that speak for themselves</h2>
+          <h2>Customer <span>experiences</span> that speak for themselves</h2>
         </div>
         <div class="review-grid">
           {reviews.map(([name, role, quote, image], i) => (
@@ -275,10 +278,12 @@ const posts = [
       </section>
 
       <section class="pricing section-shell" id="pricing">
-        <div class="section-heading center wow animate__animated animate__fadeInUp">
-          <p class="eyebrow">Pricing Plan</p>
-          <h2>Choose the perfect detailing package for your car</h2>
-          <p>Every package follows a clear checklist, estimated timing, and protection goal.</p>
+        <div class="section-heading pricing-heading wow animate__animated animate__fadeInUp">
+          <div>
+            <p class="eyebrow">Pricing Plan</p>
+            <h2>Choose the perfect detailing package for your car</h2>
+          </div>
+          <p>Discover the ideal detailing package tailored to your car's needs and condition. Whether you're looking for a quick refresh or a full restoration, our options are designed to deliver exceptional results and lasting protection.</p>
         </div>
         <div class="pricing-grid">
           {plans.map(([name, price, time, features, note], i) => (
@@ -314,7 +319,7 @@ const posts = [
           <a class="faq-contact" href="#contact">or Contact Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </aside>
         <div class="wow animate__animated animate__fadeInRight">
-          <h2>Everything you need to know about our detailing services</h2>
+          <h2>Everything you need to know about our <strong>detailing services</strong></h2>
           <div class="faq-list" id="faq-accordion">
             {faqs.map(([question, answer], i) => (
               <div class="faq-item">
@@ -356,26 +361,41 @@ const posts = [
       </section>
     </main>
 
-    <footer id="contact">
-      <div>
-        <img src="/assets/img/logo/apex-auto-detailing/logo_white.png" alt="Apex Auto Detailing" />
-        <p>Premium mobile car detailing services that bring out the best in your vehicle.</p>
-        <a class="outline-button" href="mailto:hello@apexautodetailing.example">Contact Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    <footer id="contact" class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="/assets/img/logo/apex-auto-detailing/logo_white.png" alt="Apex Auto Detailing" />
+          <p>Providing Premium Car Detailing Services That Bring Out the Best in Your Vehicle, Ensuring a Showroom Shine Every Time.</p>
+          <a class="outline-button" href="mailto:hello@apexautodetailing.example">Contact Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h2 class="footer-heading">Navigation</h2>
+          <hr />
+          <ul>
+            <li><a class="active" href="#top">Homepage</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#blog">Gallery</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+        <address class="footer-contact">
+          <div>
+            <h2 class="footer-heading">Visit Our Office</h2>
+            <hr />
+            <p>123 Serenity Lane, Blissfield, CA 90210, United States</p>
+          </div>
+          <div>
+            <h2 class="footer-heading">Contact Info</h2>
+            <hr />
+            <p><a href="tel:+15551234567">(555) 123-4567</a></p>
+            <p><a href="mailto:hello@apexautodetailing.example">hello@apexautodetailing.example</a></p>
+          </div>
+        </address>
       </div>
-      <nav aria-label="Footer navigation">
-        <h2>Navigation</h2>
-        <a href="#top">Homepage</a>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQs</a>
-      </nav>
-      <address>
-        <h2>Visit Our Office</h2>
-        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 123 Serenity Lane, Blissfield, CA 90210</p>
-        <h2>Contact Info</h2>
-        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+15551234567">(555) 123-4567</a></p>
-        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:hello@apexautodetailing.example">hello@apexautodetailing.example</a></p>
-      </address>
+      <div class="footer-copy">
+        <p>Copyright © 2026 Apex Auto Detailing. All Rights Reserved.</p>
+      </div>
     </footer>
 
     <script>
@@ -405,26 +425,11 @@ const posts = [
       // Animated counter (the "90%") via IntersectionObserver.
       const startCounters = () => {
         const counters = document.querySelectorAll<HTMLElement>(".counter");
-        // The final value is rendered server-side (e.g. "90") so it is correct
-        // for no-JS, first paint, short viewports, and full-page captures. The
-        // count-up is enhancement-only: reset to 0 then animate up on intersect.
-        const reduceMotion = window.matchMedia(
-          "(prefers-reduced-motion: reduce)",
-        ).matches;
+        // Keep the final value stable for source-fidelity captures. Earlier
+        // count-up enhancement could freeze mid-animation in full-page evidence.
         const run = (el: HTMLElement) => {
           const target = Number(el.dataset.count || "0");
-          if (reduceMotion) {
-            el.textContent = String(target);
-            return;
-          }
-          const duration = 1500;
-          const start = performance.now();
-          const tick = (now: number) => {
-            const p = Math.min((now - start) / duration, 1);
-            el.textContent = String(Math.round(p * target));
-            if (p < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
+          el.textContent = String(target);
         };
         if (!("IntersectionObserver" in window)) {
           counters.forEach((c) => (c.textContent = c.dataset.count || "0"));
@@ -964,10 +969,15 @@ const posts = [
         padding: 72px 0;
       }
 
-      .about h2 strong,
       .why h2,
       .faq h2 {
         color: #ffffff;
+      }
+
+      .about h2 strong,
+      .reviews h2 span,
+      .faq h2 strong {
+        color: #fff326;
       }
 
       .copy-stack {
@@ -1234,12 +1244,15 @@ const posts = [
         position: relative;
         border-radius: 10px;
         overflow: hidden;
+        background: #fff326;
+        box-shadow: 0 0 0 1px rgba(255, 243, 38, 0.28);
       }
 
       .quote-image img {
         width: 100%;
         min-height: 420px;
         object-fit: cover;
+        filter: saturate(1.35) brightness(1.12) sepia(0.08);
         transition: transform 600ms ease;
       }
 
@@ -1351,6 +1364,24 @@ const posts = [
 
       .pricing {
         padding: 80px 0;
+      }
+
+      .pricing-heading {
+        max-width: none;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: end;
+        gap: 64px;
+        text-align: left;
+      }
+
+      .pricing-heading p:not(.eyebrow) {
+        margin: 0;
+        max-width: 560px;
+      }
+
+      .pricing-heading h2 {
+        max-width: 590px;
       }
 
       .pricing-grid {
@@ -1490,19 +1521,20 @@ const posts = [
 
       .faq-list {
         display: grid;
-        gap: 12px;
+        gap: 0;
       }
 
       .faq-item {
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        background: #161816;
+        border: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 0;
+        background: transparent;
         overflow: hidden;
-        transition: border-color 200ms ease;
+        transition: border-color 200ms ease, background 200ms ease;
       }
 
       .faq-item:has(.faq-trigger[aria-expanded="true"]) {
-        border-color: rgba(255, 243, 38, 0.5);
+        border-color: rgba(255, 243, 38, 0.55);
       }
 
       .faq-trigger {
@@ -1511,7 +1543,7 @@ const posts = [
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        padding: 18px 22px;
+        padding: 18px 0;
         background: transparent;
         border: 0;
         cursor: pointer;
@@ -1533,7 +1565,7 @@ const posts = [
       }
 
       .faq-panel {
-        padding: 0 22px 20px;
+        padding: 0 0 20px;
         animation: faqOpen 260ms ease;
       }
 
@@ -1622,43 +1654,112 @@ const posts = [
         color: #fff326;
       }
 
-      footer {
+      .site-footer {
+        padding: 92px max(40px, calc((100vw - 1180px) / 2)) 28px;
+        background: linear-gradient(to bottom, #1b1b1b, #111111);
+        font-family: "Public Sans", Inter, Arial, sans-serif;
+      }
+
+      .footer-inner {
         display: grid;
-        grid-template-columns: 1.25fr 0.8fr 1fr;
-        gap: 54px;
-        padding: 64px max(40px, calc((100vw - 1180px) / 2));
-        background: #151715;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        grid-template-columns: minmax(0, 1.05fr) minmax(220px, 0.95fr) minmax(280px, 1fr);
+        gap: 72px;
+        align-items: start;
       }
 
-      footer img {
+      .footer-brand img {
         width: auto;
-        height: 54px;
-        margin-bottom: 18px;
+        height: 34px;
+        max-width: 320px;
+        margin-bottom: 30px;
       }
 
-      footer nav {
+      .footer-brand p,
+      .footer-contact p,
+      .footer-nav a,
+      .footer-copy p {
+        color: #b7b8b0;
+        font-size: 1.08rem;
+        line-height: 1.55;
+      }
+
+      .footer-brand p {
+        max-width: 345px;
+        margin-bottom: 28px;
+        color: #f2f2ea;
+        font-weight: 700;
+      }
+
+      .site-footer .footer-brand .outline-button {
+        width: min(100%, 342px);
+        min-height: 56px;
+        padding: 0 32px;
+        border-color: rgba(255, 255, 255, 0.92);
+        border-radius: 999px;
+        font-size: 1.03rem;
+      }
+
+      .site-footer .footer-nav {
+        display: flex;
         align-items: flex-start;
         flex-direction: column;
-        gap: 12px;
+        gap: 0;
       }
 
-      footer nav a:hover {
+      .footer-heading {
+        margin: 0 0 13px;
+        font-family: "Libre Franklin", "Public Sans", Inter, Arial, sans-serif;
+        font-size: 1.28rem;
+        line-height: 1.2;
+        font-weight: 800;
+        color: #ffffff;
+      }
+
+      .site-footer .footer-nav hr,
+      .site-footer .footer-contact hr {
+        width: 100%;
+        margin: 0 0 20px;
+        border: 0;
+        border-top: 2px solid rgba(255, 255, 255, 0.22);
+      }
+
+      .site-footer .footer-nav ul {
+        display: grid;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .site-footer .footer-nav a,
+      .site-footer .footer-contact a {
+        font-weight: 700;
+        color: #b7b8b0;
+      }
+
+      .site-footer .footer-nav a.active,
+      .site-footer .footer-nav a:hover,
+      .site-footer .footer-contact a:hover {
         color: #fff326;
       }
 
-      footer h2 {
-        font-size: 1.1rem;
-        margin-bottom: 12px;
-      }
-
-      address {
+      .footer-contact {
+        display: grid;
+        gap: 46px;
         font-style: normal;
       }
 
-      address i {
-        color: #fff326;
-        margin-right: 8px;
+      .footer-contact p {
+        margin-bottom: 0;
+      }
+
+      .footer-copy {
+        padding-top: 68px;
+        text-align: center;
+      }
+
+      .footer-copy p {
+        margin: 0;
       }
 
       @media (max-width: 980px) {
@@ -1722,7 +1823,7 @@ const posts = [
         .review-grid,
         .pricing-grid,
         .blog-grid,
-        footer,
+        .footer-inner,
         .grid-section {
           grid-template-columns: 1fr;
         }
@@ -1768,6 +1869,11 @@ const posts = [
         .pricing-grid article.featured {
           margin-top: 0;
           transform: none;
+        }
+
+        .pricing-heading {
+          grid-template-columns: 1fr;
+          gap: 18px;
         }
 
         .reviews {
@@ -1835,8 +1941,53 @@ const posts = [
           border-top: 4px solid #fff326;
         }
 
-        footer {
+        .site-footer {
           padding: 44px 22px;
+        }
+
+        .footer-inner {
+          gap: 44px;
+        }
+
+        .footer-brand img {
+          height: 32px;
+        }
+
+        .footer-heading {
+          font-size: 1.18rem;
+        }
+
+        .footer-copy {
+          padding-top: 44px;
+          text-align: center;
+        }
+      }
+
+      @media (min-width: 700px) and (max-width: 980px) {
+        .site-footer .footer-inner {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 48px 56px;
+        }
+
+        .site-footer .footer-brand {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 699px) {
+        .site-footer .footer-brand {
+          text-align: center;
+        }
+
+        .site-footer .footer-brand img {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .site-footer .footer-brand p,
+        .site-footer .footer-brand .outline-button {
+          margin-left: auto;
+          margin-right: auto;
         }
       }
 
