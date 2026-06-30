@@ -321,6 +321,7 @@
       "layout": "three desktop columns; tablet brand spans full width while navigation and contact sit in two columns; mobile stacks",
       "alignment": "footer Navigation heading, underline, list, and active Homepage link must share the same left edge",
       "brandColumn": "logo box above white/bold source copy, followed by full-width 342px outline pill CTA",
+      "webdevfulAttribution": "footer copyright/credit row must visibly include Webdevful company branding as a linked provider attribution",
       "activeLink": "Homepage active state remains acid yellow",
       "sourceRefs": [
         "footer h5.heading",
@@ -329,7 +330,7 @@
         "footer .col-12.col-md-6.col-xl-4",
         "footer copyright row"
       ],
-      "forbidden": "centered footer navigation headings/lists, button-sized footer CTA, tablet single-column collapse, plain footer headings without underline rules, missing Visit/Contact title separation, or an active Homepage link rendered gray"
+      "forbidden": "centered footer navigation headings/lists, button-sized footer CTA, tablet single-column collapse, plain footer headings without underline rules, missing Visit/Contact title separation, active Homepage link rendered gray, or footer copyright/credit row missing visible Webdevful attribution"
     }
   ]
 }
